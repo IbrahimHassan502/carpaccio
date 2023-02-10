@@ -12,10 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;700&display=swap"
       rel="stylesheet"
     />
-    <!-- main style -->
-    <link rel="stylesheet" href="vendor/css/style.css" />
     <!-- plugin css -->
     <link rel="stylesheet" href="vendor/css/boxicons.css" />
+    <link rel="stylesheet" href="vendor/css/owl.carousel.min.css" />
+
+    <!-- main style -->
+    <link rel="stylesheet" href="vendor/css/style.css" />
   </head>
   <body>
     <!--  ===================================
@@ -117,8 +119,53 @@
     <article class="special">
       <div class="container">
         <h2>our special for the week</h2>
+        <div class="special-carousel owl-carousel owl-theme">
+          <div class="item">
+            <div class="veil-first-left"></div>
+            <div class="veil-first-right"></div>
+            <div class="veil-second-left"></div>
+            <div class="veil-second-right"></div>
+            <img
+              srcset="
+                images/special-1-640.jpg   640w,
+                images/special-1-1280.jpg 1280w
+              "
+              sizes="(max-width: 767px) 510px, 1110px"
+              src="images/special-1-1280.jpg"
+              alt="first special course of the week"
+            />
+          </div>
+          <div class="item">
+            <img
+              srcset="
+                images/special-2-640.jpg   640w,
+                images/special-2-1280.jpg 1280w
+              "
+              sizes="(max-width: 767px) 510px, 1110px"
+              src="images/special-2-1280.jpg"
+              alt="second special course of the week"
+            />
+          </div>
+          <div class="item">
+            <img
+              srcset="
+                images/special-3-640.jpg   640w,
+                images/special-3-1280.jpg 1280w
+              "
+              sizes="(max-width: 767px) 510px, 1110px"
+              src="images/special-3-1280.jpg"
+              alt="third special course of the week"
+            />
+          </div>
+        </div>
       </div>
     </article>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+    integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="vendor/js/owl.carousel.min.js"></script>
   <script src="vendor/js/script.js"></script>
 </html>
