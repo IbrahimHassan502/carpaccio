@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>foody</title>
+    <meta
+      name="description"
+      content="Sweet Home is a highly creative, modern, visually stunning and Bootstrap responsive multipurpose studio and portfolio HTML5 template."
+    />
+
     <!-- google fonst -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +18,7 @@
       rel="stylesheet"
     />
     <!-- plugin css -->
-    <link rel="stylesheet" href="vendor/css/boxicons.css" />
+    <link rel="stylesheet" href="vendor/css/fontello.css" />
     <link rel="stylesheet" href="vendor/css/owl.carousel.min.css" />
 
     <!-- main style -->
@@ -40,7 +45,7 @@
         hero
     ======================================-->
     <article class="hero bg overlay">
-      <i class="bx bxs-dish"></i>
+      <img src="images/dish.svg" alt="" />
       <h1>foody</h1>
       <p class="text-capitalize">- best of the best -</p>
     </article>
@@ -121,14 +126,20 @@
         <h2>our special for the week</h2>
         <div class="special-carousel veiled owl-carousel owl-theme">
           <div class="item">
-            <img
-              srcset="
-                images/special-1-640.jpg   640w,
-                images/special-1-1140.jpg 1140w
-              "
-              src="images/special-1-1280.jpg"
-              alt="first special course of the week"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/special-1-640.webp"
+              />
+              <source
+                media="(min-width: 1200px)"
+                srcset="images/special-1-1140.webp"
+              />
+              <img
+                src="images/special-1-1140.webp"
+                alt="special course for the week"
+              />
+            </picture>
             <div class="ingregient-box">
               <h3>beef</h3>
               <p class="price">10$</p>
@@ -147,34 +158,128 @@
             </div>
           </div>
           <div class="item">
-            <img
-              srcset="
-                images/special-2-640.jpg   640w,
-                images/special-2-1140.jpg 1140w
-              "
-              src="images/special-2-1280.jpg"
-              alt="second special course of the week"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/special-2-640.webp"
+              />
+              <source
+                media="(min-width: 1200px)"
+                srcset="images/special-2-1140.webp"
+              />
+              <img
+                src="images/special-2-1140.webp"
+                alt="special course for the week"
+              />
+            </picture>
             <div class="info-icon veil-btn">
               <div class="dot"></div>
               <div class="i"></div>
             </div>
           </div>
           <div class="item">
-            <img
-              srcset="
-                images/special-3-640.jpg   640w,
-                images/special-3-1140.jpg 1140w
-              "
-              src="images/special-3-1280.jpg"
-              alt="third special course of the week"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/special-3-640.webp"
+              />
+              <source
+                media="(min-width: 1200px)"
+                srcset="images/special-3-1140.webp"
+              />
+              <img
+                src="images/special-3-1140.webp"
+                alt="special course for the week"
+              />
+            </picture>
             <div class="info-icon veil-btn">
               <div class="dot"></div>
               <div class="i"></div>
             </div>
           </div>
         </div>
+      </div>
+    </article>
+    <!--===================================
+       reservation & order
+    ======================================-->
+    <article class="reserv bg overlay">
+      <div class="container">
+        <form name="reservation" class="reserv-form">
+          <h2>make reservation</h2>
+          <div class="form-row">
+            <div class="input-box">
+              <input type="text" placeholder="name" name="name" />
+              <i class="icon-user input-icon"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="email" name="email" />
+              <i class="icon-mail-1 input-icon"></i>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input-box">
+              <input type="tel" placeholder="phone number" name="phone-num" />
+              <i class="icon-phone input-icon"></i>
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="reservation-date"
+                name="reserv-date"
+              />
+              <i class="icon-calendar input-icon"></i>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="reservation time"
+                name="reserv-time"
+              />
+              <i class="icon-clock input-icon"></i>
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="number of people"
+                name="people-num"
+              />
+              <i class="icon-users input-icon"></i>
+            </div>
+          </div>
+          <div class="form-row">
+            <h3>Having A Big Thing ?</h3>
+            <div class="input-box">
+              <input type="text" placeholder="tabels" name="tabel-num" />
+              <img src="images/dinner-table.svg" class="input-icon" alt="" />
+            </div>
+          </div>
+          <input type="submit" value="make reservation" class="btn" />
+        </form>
+        <form name="order" class="order-form">
+          <div class="order-heading-box">
+            <h2>order</h2>
+            <i class="icon-plus"></i>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="name" name="name" />
+            <i class="icon-user input-icon"></i>
+          </div>
+          <div class="input-box">
+            <input type="tel" placeholder="phone number" name="phone-num" />
+            <i class="icon-phone input-icon"></i>
+          </div>
+          <textarea placeholder="specific address" name="address"></textarea>
+          <div class="btn-box">
+            <input type="submit" value="place order" class="btn" />
+            <div class="price">
+              total
+              <span class="price">0$</span>
+            </div>
+          </div>
+        </form>
       </div>
     </article>
   </body>

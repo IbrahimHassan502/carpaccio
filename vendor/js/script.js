@@ -8,8 +8,8 @@ $(".special-carousel").owlCarousel({
   center: true,
   dots: false,
   navText: [
-    `<div><i class='bx bx-chevron-left'></i><span>pr<br />ev</span></div>`,
-    `<div><span>ne<br />xt</span><i class='bx bx-chevron-right'></i></div>`,
+    `<div><i class='icon-angle-left'></i><span>pr<br />ev</span></div>`,
+    `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
   ],
 });
 // showing special of the week info
