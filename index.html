@@ -203,7 +203,7 @@
     <!--===================================
        reservation & order
     ======================================-->
-    <article class="reserv bg overlay">
+    <article class="reserv bg overlay veiled">
       <div class="container">
         <form name="reservation" class="reserv-form">
           <h2>make reservation</h2>
@@ -261,7 +261,7 @@
         <form name="order" class="order-form">
           <div class="order-heading-box">
             <h2>order</h2>
-            <i class="icon-plus"></i>
+            <i class="icon-plus veil-btn" data-veilTarget="reserv"></i>
           </div>
           <div class="input-box">
             <input type="text" placeholder="name" name="name" />
@@ -274,12 +274,16 @@
           <textarea placeholder="specific address" name="address"></textarea>
           <div class="btn-box">
             <input type="submit" value="place order" class="btn" />
-            <div class="price">
+            <div class="total-price-box">
               total
-              <span class="price">0$</span>
+              <span class="total-price price">$0</span>
             </div>
           </div>
         </form>
+      </div>
+      <div class="menu">
+        <h2>- menu -</h2>
+        <i class="icon-plus veil-btn" data-veiltarget="reserv"></i>
       </div>
     </article>
   </body>
