@@ -316,8 +316,13 @@ function showMenu() {
       itemContainer.innerHTML = `<div class="item-box">
                   <div class="check-box"></div>
                   <p class="item-name">${item.name}</p>
-                  ${item.addOns ? '<i class="icon-plus add-ons-icon"></i>' : ""}
-                  <span class="price">$${item.price}</span>
+                  <input type="number" class="quantity" value="1" />
+                  ${
+                    item.addOns
+                      ? `<div><i class="icon-plus add-ons-icon"></i><span class="price">$${item.price}</span></div>`
+                      : `<span class="price">$${item.price}</span>`
+                  }
+
                 </div>`;
       if (item.addOns) {
         const addOnsList = document.createElement("ul");
@@ -327,6 +332,7 @@ function showMenu() {
           li.innerHTML = `<div class="item-box">
                   <div class="check-box"></div>
                   <p class="item-name">${addOn.name}</p>
+                  <input type="number" class="quantity" value="1" />
                   <span class="price">$${addOn.price}</span>
                   </div>
                 </div>`;
@@ -345,13 +351,18 @@ showMenu();
 const totalPriceText = document.querySelector(
   ".order-form .total-price-box .total-price"
 ).innerHTML;
-const totalPrice = Number(totalPriceText.match(/\\*[0,9]/));
+let totalPrice = Number(totalPriceText.match(/[^$]/g).join(""));
 function calculatePrice(add, priceParent) {
   if (add) {
-    const addedPriceText = priceParent.querySelector(".total-price");
-    // const addedPrice = Number(addedPriceText.match(/\\*[0,9]/));
-    // totalPrice += addedPrice;
-    console.log(addedPriceText);
+    const totalAddedPriceText = priceParent.querySelector(".price").innerHTML;
+    const totalAddedPrice = Number(totalAddedPriceText.match(/[^$]/g).join(""));
+    totalPrice += totalAddedPrice;
+    const totalPrices = document.querySelectorAll(
+      ".total-price-box .total-price"
+    );
+    totalPrices.forEach((price) => {
+      price.innerHTML = `$${totalPrice.toFixed(2)}`;
+    });
   }
 }
 foodMenu.addEventListener("click", (e) => {

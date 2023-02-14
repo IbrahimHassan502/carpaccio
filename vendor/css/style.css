@@ -808,17 +808,28 @@ nav .logo {
 .order-form .btn-box .btn {
   margin: 0;
 }
-.order-form .btn-box .total-price-box {
+.total-price-box {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   background-color: var(--white-color, #fff);
+  color: var(--light-grey-color);
+  padding: 5px;
   border-radius: 5px;
   font-weight: bold;
+  max-width: 150px;
 }
-.order-form .btn-box .total-price-box span {
+.total-price-box span {
   color: var(--green-color, green);
+}
+.menu .total-price-box {
+  padding: 8px 42px;
+  width: max-content;
+  position: absolute;
+  top: 120px;
+  right: 70px;
+  max-width: 300px;
 }
 
 .reserv .menu {
@@ -842,7 +853,7 @@ nav .logo {
 }
 .reserv .menu .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 .reserv .menu h2 {
@@ -859,10 +870,9 @@ nav .logo {
   margin-bottom: 20px;
 }
 .reserv .menu .item-box {
-  display: flex;
+  display: grid;
   align-items: center;
-}
-.reserv .menu .item-box {
+  grid-template-columns: auto 2fr 1fr 1fr;
   margin-bottom: 20px;
 }
 .reserv .menu .add-ons-list li {
@@ -904,6 +914,13 @@ nav .logo {
 }
 .menu .add-ons-list .item-name {
   margin-right: 30px;
+}
+.menu .quantity {
+  width: 60px;
+  padding: 5px;
+  margin: 0 10px;
+  background: var(--white-color);
+  color: var(--grey-color);
 }
 .menu .item-box .add-ons-icon {
   margin-right: 5px;
