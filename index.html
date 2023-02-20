@@ -261,7 +261,10 @@
         <form name="order" class="order-form">
           <div class="order-heading-box">
             <h2>order</h2>
-            <i class="icon-plus veil-btn" data-veilTarget="reserv"></i>
+            <i
+              class="icon-plus veil-btn show-menu-btn"
+              data-veilTarget="reserv"
+            ></i>
           </div>
           <div class="input-box">
             <input type="text" placeholder="name" name="name" />
@@ -288,6 +291,7 @@
           <span class="total-price price">$0</span>
         </div>
         <i class="icon-plus veil-btn" data-veiltarget="reserv"></i>
+        <div class="container"></div>
       </div>
     </article>
     <!--===================================
@@ -351,10 +355,14 @@
     <!--===================================
        menu
     ======================================-->
-    <article class="menu-categories bg overlay">
+    <article class="menu-categories bg overlay veiled">
       <h2>menu</h2>
       <div class="container">
-        <div class="menu-box overlay" data-name="starters">
+        <div
+          class="menu-box overlay veil-btn"
+          data-veilTarget="menu-categories"
+          data-name="starters"
+        >
           <img
             src="images/enterees-resize.jpg"
             width="470"
@@ -362,24 +370,44 @@
             alt=""
           />
         </div>
-        <div class="menu-box overlay" data-name="meat">
+
+        <div
+          class="menu-box overlay veil-btn"
+          data-veilTarget="menu-categories"
+          data-name="meat"
+        >
           <img src="images/meat-resize.jpg" width="470" height="313" alt="" />
         </div>
-        <div class="menu-box overlay" data-name="salad">
+
+        <div
+          class="menu-box overlay veil-btn"
+          data-veilTarget="menu-categories"
+          data-name="soup"
+        >
+          <img src="images/soup.jpg" width="470" height="313" alt="" />
+        </div>
+
+        <div
+          class="menu-box overlay veil-btn"
+          data-veilTarget="menu-categories"
+          data-name="salad"
+        >
           <img src="images/salad.jpg" width="470" height="313" alt="" />
         </div>
-        <div class="menu-box overlay" data-name="burger">
+
+        <div
+          class="menu-box overlay veil-btn"
+          data-veilTarget="menu-categories"
+          data-name="burger"
+        >
           <img src="images/burger-resize.jpg" width="470" height="313" alt="" />
         </div>
-        <div class="menu-box overlay" data-name="entrees">
-          <img
-            src="images/enterees-resize.jpg"
-            width="470"
-            height="313"
-            alt=""
-          />
-        </div>
-        <div class="menu-box overlay" data-name="dessert">
+
+        <div
+          class="menu-box overlay veil-btn"
+          data-veilTarget="menu-categories"
+          data-name="dessert"
+        >
           <img
             src="images/dessert-resize.jpg"
             width="470"
@@ -387,6 +415,14 @@
             alt=""
           />
         </div>
+      </div>
+      <div class="menu">
+        <div class="total-price-box">
+          total
+          <span class="total-price price">$0</span>
+        </div>
+        <i class="icon-plus veil-btn" data-veiltarget="menu-categories"></i>
+        <div class="container"></div>
       </div>
     </article>
   </body>

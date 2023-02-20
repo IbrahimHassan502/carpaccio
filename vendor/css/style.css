@@ -333,6 +333,9 @@ button {
   top: 3px;
   opacity: 0;
 }
+.veiled {
+  overflow: hidden;
+}
 /* container */
 .container {
   padding-left: 15px;
@@ -704,7 +707,7 @@ nav .logo {
   grid-template-columns: 1fr 1fr;
   gap: 100px;
 }
-.reserv .container::before {
+.reserv > .container::before {
   content: "";
   width: 1px;
   height: 80%;
@@ -782,7 +785,7 @@ nav .logo {
   border-right: 1px solid var(--white-color, #fff);
 }
 .order-form .order-heading-box .veil-btn,
-.reserv .menu .veil-btn {
+.menu .veil-btn {
   color: var(--white-color, #fff);
   font-size: 1.2em;
   padding: 1px;
@@ -794,7 +797,7 @@ nav .logo {
   cursor: pointer;
   transition: 0.5s;
 }
-.reserv .menu .veil-btn {
+.menu .veil-btn {
   position: absolute;
   top: 120px;
   right: 15px;
@@ -836,7 +839,7 @@ nav .logo {
   max-width: 300px;
 }
 
-.reserv .menu {
+.menu {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -851,37 +854,38 @@ nav .logo {
   color: var(--white-color, #fff);
   transition: transform 0s 1s, opacity 0.4s;
 }
-.reserv.veil-on .menu {
+.veil-on .menu {
   transform: translateY(0);
   opacity: 1;
   transition: transform 0s 0s, opacity 0.4s 1s;
 }
-.reserv .menu .grid-container {
+.menu .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
-.reserv .menu h2 {
+.menu h2 {
   text-align: center;
   margin-bottom: 30px;
 }
-.reserv .menu .menu-column {
+.menu .menu-column {
   border: 1px solid;
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 20px;
 }
-.reserv .menu h3 {
+.menu h3 {
+  color: var(--white-color, #fff);
   margin-bottom: 35px;
   font-size: 2em;
 }
-.reserv .menu .item-box {
+.menu .item-box {
   display: grid;
   align-items: center;
   grid-template-columns: auto 4fr 1fr 1fr;
   margin-bottom: 30px;
 }
-.reserv .menu .add-ons-list li {
+.menu .add-ons-list li {
   margin: 0 0 10px 30px;
 }
 .menu .check-box {
@@ -896,7 +900,7 @@ nav .logo {
   place-items: center;
   transition: 0.2s;
 }
-.reserv .menu .add-ons-list li .check-box {
+.menu .add-ons-list li .check-box {
   padding: 7px;
   border-radius: 2px;
 }
@@ -919,6 +923,9 @@ nav .logo {
   margin-right: auto;
   font-size: 1.5em;
   font-weight: bold;
+}
+.menu .add-ons-list .check-box::after {
+  font-size: 0.8em;
 }
 .menu .add-ons-list .item-name {
   margin-right: 30px;
@@ -996,7 +1003,7 @@ nav .logo {
   color: var(--white-color, #fff);
   margin-bottom: 70px;
 }
-.menu-categories .container {
+.menu-categories > .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -1014,6 +1021,7 @@ nav .logo {
   place-items: center;
   font-family: "Merienda", cursive;
   font-size: 2.5em;
+  text-transform: capitalize;
   opacity: 0;
   transition: 0.7s;
 }
@@ -1026,18 +1034,26 @@ nav .logo {
 .menu-categories .menu-box[data-name="meat"]::after {
   content: "- meat - ";
 }
+.menu-categories .menu-box[data-name="soup"]::after {
+  content: "- soup - ";
+}
 .menu-categories .menu-box[data-name="salad"]::after {
   content: "- salad - ";
 }
 .menu-categories .menu-box[data-name="burger"]::after {
   content: "- burger - ";
 }
-.menu-categories .menu-box[data-name="entrees"]::after {
-  content: "- entrees - ";
-}
 .menu-categories .menu-box[data-name="dessert"]::after {
   content: "- dessert - ";
 }
 .menu-categories .menu-box img {
   height: 100%;
+}
+.menu-categories .menu .grid-container {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.menu-categories .menu .veil-btn,
+.menu-categories .menu .total-price-box {
+  top: 60px;
 }
