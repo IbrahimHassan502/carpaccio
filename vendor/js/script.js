@@ -329,6 +329,11 @@ const dessert = {
   ],
 };
 const mainMenu = [starters, meat, soup, salads, burgers, dessert];
+// const testMenu = mainMenu
+//   .find((menu) => menu.name === "dessert")
+//   .items.find((item) => item.name === "carrot cake");
+// console.log(mainMenu);
+// console.log(testMenu);
 const foodMenu = document.querySelectorAll(".menu");
 function showMenu(menuArr, menuParent) {
   const gridContainer = document.createElement("div");
@@ -391,22 +396,24 @@ function showMenu(menuArr, menuParent) {
 const reservMenu = document.querySelector(".reserv .menu");
 showMenu(mainMenu, reservMenu);
 
-const totalPriceText = document.querySelector(
-  ".order-form .total-price-box .total-price"
-).innerHTML;
-let totalPrice = Number(totalPriceText.match(/[^$]/g).join(""));
+const cart = {
+  items: [],
+  totalPrice: 0,
+};
 function calculatePrice(add, priceParent) {
+  const totalAddedPriceText = priceParent.querySelector(".price").innerHTML;
+  const totalAddedPrice = Number(totalAddedPriceText.match(/[^$]/g).join(""));
   if (add) {
-    const totalAddedPriceText = priceParent.querySelector(".price").innerHTML;
-    const totalAddedPrice = Number(totalAddedPriceText.match(/[^$]/g).join(""));
-    totalPrice += totalAddedPrice;
-    const totalPrices = document.querySelectorAll(
-      ".total-price-box .total-price"
-    );
-    totalPrices.forEach((price) => {
-      price.innerHTML = `$${totalPrice.toFixed(2)}`;
-    });
+    cart.totalPrice += totalAddedPrice;
+  } else {
+    cart.totalPrice -= totalAddedPrice;
   }
+  const totalPrices = document.querySelectorAll(
+    ".total-price-box .total-price"
+  );
+  totalPrices.forEach((price) => {
+    price.innerHTML = `$${cart.totalPrice.toFixed(2)}`;
+  });
 }
 foodMenu.forEach((menu) => {
   menu.addEventListener("click", (e) => {
@@ -421,6 +428,17 @@ foodMenu.forEach((menu) => {
         clicked.classList.contains("checked"),
         clicked.parentElement
       );
+      const checkedItem = mainMenu
+        .find(
+          (menu) =>
+            menu.name ===
+            clicked.closest(".menu-column").querySelector("h3").innerText
+        )
+        .items.find(
+          (item) =>
+            item.name === clicked.parentElement.querySelector(".item-name")
+        );
+      console.log(checkedItem);
     }
   });
 });
