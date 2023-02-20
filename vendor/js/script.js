@@ -55,31 +55,31 @@ const menuArr = [
       {
         name: "chips & dip",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 7,
       },
       {
         name: "chicken quesadilla",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 10.5,
       },
       {
         name: "loaded nachos",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 13.75,
       },
       {
         name: "scotch egg",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 7,
       },
       {
         name: "fried pickles",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 7,
       },
     ],
@@ -90,19 +90,25 @@ const menuArr = [
       {
         name: "beef with green pepper",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 30,
         addOns: [
           {
             name: "Bearnaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Bordelaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Gremolata",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
         ],
@@ -110,19 +116,25 @@ const menuArr = [
       {
         name: "beef with salay sauce",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 30,
         addOns: [
           {
             name: "Bearnaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Bordelaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Gremolata",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
         ],
@@ -130,19 +142,25 @@ const menuArr = [
       {
         name: "sausage steak",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 30,
         addOns: [
           {
             name: "Bearnaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Bordelaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Gremolata",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
         ],
@@ -150,19 +168,25 @@ const menuArr = [
       {
         name: "hangauian sausage",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 30,
         addOns: [
           {
             name: "Bearnaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Bordelaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Gremolata",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
         ],
@@ -170,22 +194,57 @@ const menuArr = [
       {
         name: "polish sausage",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 30,
         addOns: [
           {
             name: "Bearnaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Bordelaise Sauce",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
           {
             name: "Gremolata",
+            describtion:
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
             price: 5,
           },
         ],
+      },
+    ],
+  },
+  {
+    name: "soup",
+    menu: [
+      {
+        name: "tom yum kung",
+        describtion:
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
+        price: 6.99,
+      },
+      {
+        name: "pumpkin soup",
+        describtion:
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
+        price: 6.99,
+      },
+      {
+        name: "tomato soup",
+        describtion:
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
+        price: 6.99,
+      },
+      {
+        name: "potato soup",
+        describtion:
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
+        price: 6.99,
       },
     ],
   },
@@ -195,19 +254,19 @@ const menuArr = [
       {
         name: "guacamole salad",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 6.99,
       },
       {
         name: "checkin salad",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 6.99,
       },
       {
         name: "greek salad",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 6.99,
       },
     ],
@@ -218,55 +277,26 @@ const menuArr = [
       {
         name: "angus beef burger",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 9.95,
       },
       {
         name: "mushroom swiss burger",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 11.95,
       },
       {
         name: "kickory burger",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 9.5,
       },
       {
         name: "santa fe burger",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 11,
-      },
-    ],
-  },
-  {
-    name: "enterees",
-    menu: [
-      {
-        name: "parmesan chicken",
-        describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-        price: 9.95,
-      },
-      {
-        name: "shrimp cilantro wrap",
-        describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-        price: 8,
-      },
-      {
-        name: "grilled salmon",
-        describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-        price: 10.99,
-      },
-      {
-        name: "microbrew battered halibut",
-        describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-        price: 13,
       },
     ],
   },
@@ -276,25 +306,25 @@ const menuArr = [
       {
         name: "molten chocolate cake",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 6.5,
       },
       {
         name: "cherry cobbler",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 5.5,
       },
       {
         name: "black the mousse cake",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 6.5,
       },
       {
         name: "carrot cake",
         describtion:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
         price: 4,
       },
     ],
@@ -319,8 +349,16 @@ function showMenu() {
                   <input type="number" class="quantity" value="1" />
                   ${
                     item.addOns
-                      ? `<div><i class="icon-plus add-ons-icon"></i><span class="price">$${item.price}</span></div>`
+                      ? `<div>
+                          <i class="icon-plus add-ons-icon"></i>
+                          <span class="price">$${item.price}</span>
+                        </div>`
                       : `<span class="price">$${item.price}</span>`
+                  }
+                  ${
+                    item.describtion
+                      ? `<p class="item-description">${item.describtion}</p>`
+                      : ``
                   }
 
                 </div>`;
@@ -334,6 +372,11 @@ function showMenu() {
                   <p class="item-name">${addOn.name}</p>
                   <input type="number" class="quantity" value="1" />
                   <span class="price">$${addOn.price}</span>
+                  ${
+                    addOn.describtion
+                      ? `<p class="item-description">${addOn.describtion}</p>`
+                      : ``
+                  }
                   </div>
                 </div>`;
           addOnsList.append(li);
@@ -368,7 +411,7 @@ function calculatePrice(add, priceParent) {
 foodMenu.addEventListener("click", (e) => {
   const clicked = e.target;
   if (clicked.classList.contains("add-ons-icon")) {
-    clicked.parentElement.nextElementSibling.classList.toggle("active");
+    clicked.closest(".item-box").nextElementSibling.classList.toggle("active");
   } else if (clicked.classList.contains("check-box")) {
     clicked.classList.toggle("checked");
     calculatePrice(
@@ -376,4 +419,17 @@ foodMenu.addEventListener("click", (e) => {
       clicked.parentElement
     );
   }
+});
+// initiate offers of the week carousel
+$(".offer-carousel").owlCarousel({
+  loop: true,
+  margin: 5,
+  nav: true,
+  items: 3,
+  center: true,
+  dots: false,
+  navText: [
+    `<div><i class='icon-angle-left'></i><span>pr<br />ev</span></div>`,
+    `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
+  ],
 });
