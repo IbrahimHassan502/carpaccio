@@ -1,5 +1,5 @@
-{
-  "starters": {
+[
+  {
     "name": "starters",
     "items": [
       {
@@ -29,7 +29,7 @@
       }
     ]
   },
-  "meat": {
+  {
     "name": "meat",
     "items": [
       {
@@ -144,7 +144,7 @@
       }
     ]
   },
-  "soup": {
+  {
     "name": "soup",
     "items": [
       {
@@ -169,7 +169,7 @@
       }
     ]
   },
-  "salads": {
+  {
     "name": "salads",
     "items": [
       {
@@ -189,7 +189,7 @@
       }
     ]
   },
-  "burgers": {
+  {
     "name": "burgers",
     "items": [
       {
@@ -214,7 +214,7 @@
       }
     ]
   },
-  "dessert": {
+  {
     "name": "dessert",
     "items": [
       {
@@ -239,4 +239,4 @@
       }
     ]
   }
-}
+]

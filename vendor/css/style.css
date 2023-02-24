@@ -166,6 +166,7 @@ template {
   --grey-color: #484b59;
   --light-grey-color: #6e6e6e;
   --green-color: #6d9710;
+  --light-green-color: #95ce16;
   --white-color: #f0f3f7;
   --main-shadow: 5px 5px 12px var(--grey-color);
   /* --main-shadow: 5px 5px 12px #3a3c46; */
@@ -456,15 +457,20 @@ button {
   position: absolute;
   top: 0;
   transform: translateY(-100%);
-  overflow-y: scroll;
   opacity: 0;
   transition: transform 0s 1s, opacity 0.4s;
+  z-index: 100;
 }
-.shown {
+.veil-on .hidden {
   transform: translateY(0);
   opacity: 1;
   transition: transform 0s 0s, opacity 0.4s 1s;
 }
+/* .shown {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0s 0s, opacity 0.4s 1s;
+} */
 /* container */
 .container {
   padding-left: 15px;
@@ -515,6 +521,7 @@ nav .logo {
 .nav-links a {
   margin: 8px 16px;
   font-weight: 900;
+  text-transform: capitalize;
 }
 /* ===================================
     hero
@@ -844,24 +851,14 @@ nav .logo {
 }
 
 .menu {
-  position: absolute;
+  left: 0;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  top: 0;
-  transform: translateY(-100%);
-  opacity: 0;
-  left: 0;
   padding: 120px 15px;
   background: var(--grey-color);
-  z-index: 4;
   color: var(--white-color, #fff);
-  transition: transform 0s 1s, opacity 0.4s;
-}
-.veil-on .menu {
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 0s 0s, opacity 0.4s 1s;
+  z-index: 4;
 }
 .menu .grid-container {
   display: grid;
@@ -947,13 +944,21 @@ nav .logo {
   margin: 0 10px;
   background: var(--white-color);
   color: var(--grey-color);
+  pointer-events: none;
+  opacity: 0.55;
+  border: none;
+  border-radius: 5px;
+}
+.menu .checked ~ .quantity {
+  pointer-events: all;
+  opacity: 1;
 }
 .menu .item-box .add-ons-icon {
   margin-right: 5px;
   cursor: pointer;
 }
 .menu .price {
-  color: var(--green-color);
+  color: var(--light-green-color);
   text-align: center;
 }
 .menu .add-ons-list {
@@ -1060,4 +1065,137 @@ nav .logo {
 .menu-categories .menu .veil-btn,
 .menu-categories .menu .total-price-box {
   top: 60px;
+}
+/* founder */
+.founder .container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+}
+
+.founder img {
+  border-radius: 5px;
+  box-shadow: var(--main-shadow);
+}
+
+.founder .qoute-container {
+  width: min-content;
+}
+
+.founder h2 {
+  font-size: 3.5em;
+  margin-bottom: 35px;
+  width: max-content;
+}
+
+.founder .qoute {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.founder .signature {
+  font-family: "Homemade Apple", cursive;
+}
+/* next-event */
+.next-event {
+  background: url(../../images/event.jpg);
+  background-position: 50% 90%;
+  color: var(--white-color, #fff);
+}
+.next-event::after {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+.next-event h2,
+.next-event h3 {
+  color: var(--white-color, #fff);
+}
+/* chefs */
+.chefs .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+.chefs .chef-card {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--main-shadow);
+  position: relative;
+  color: var(--white-color, #fff);
+}
+.chefs .chef-card .name {
+  color: var(--white-color, #fff);
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+.chefs .chef-card .position {
+  color: var(--light-green-color);
+}
+.chefs .chef-card > img {
+  height: 100%;
+}
+.chef-card .description-box {
+  padding: 15px;
+}
+.chef-card .description-box ul li {
+  display: flex;
+  gap: 10px;
+  margin: 25px 0;
+}
+.chef-card .description-box img {
+  width: 30px;
+}
+
+/* reviews */
+article.reviews {
+  background-image: url(../../images/gallery.jpg);
+  color: var(--white-color, #fff);
+  margin-bottom: 0;
+}
+.reviews::after {
+  background: rgba(0, 0, 0, 0.62);
+}
+.reviews .item {
+  text-align: center;
+}
+.reviews .owl-carousel .owl-item img {
+  width: 114px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+.reviews .name {
+  text-transform: capitalize;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+.reviews .stars {
+  color: orange;
+}
+.reviews .review-text {
+  width: 70%;
+  margin: 20px auto;
+  font-weight: bold;
+}
+.reviews .owl-nav {
+  color: var(--white-color, #fff);
+}
+.reviews .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.reviews .owl-nav button.owl-prev {
+  left: 0;
+}
+.reviews .owl-nav button.owl-next {
+  right: 0;
+}
+/* location & contact */
+article.location-contact {
+  margin: 0;
+  background-color: var(--grey-color);
+  color: var(--white-color, #fff);
+}
+.location-contact h2 {
+  color: var(--light-green-color);
 }

@@ -17,6 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap&text=johndoe"
+      rel="stylesheet"
+    />
     <!-- plugin css -->
     <link rel="stylesheet" href="vendor/css/fontello.css" />
     <link rel="stylesheet" href="vendor/css/owl.carousel.min.css" />
@@ -33,6 +37,7 @@
         <nav class="d-flex align-center space-between">
           <a href="index.html" class="logo text-capitalize">foody</a>
           <ul class="d-flex nav-links">
+            <li><a href="#menu">menu</a></li>
             <li><a href="#special">our special</a></li>
             <li><a href="#res">Reservation</a></li>
             <li><a href="#offers">offers</a></li>
@@ -284,11 +289,11 @@
           </div>
         </form>
       </div>
-      <div class="menu" id="menu-1">
+      <div class="menu hidden" id="menu-1">
         <h2>- menu -</h2>
         <div class="total-price-box">
           total
-          <span class="total-price price">$0</span>
+          <span class="total-price">$0</span>
         </div>
         <i class="icon-plus veil-btn" data-veiltarget="reserv"></i>
       </div>
@@ -306,7 +311,7 @@
               <div class="dot"></div>
               <div class="i"></div>
             </div>
-            <div class="description-box">
+            <div class="description-box hidden">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
               atque tenetur aspernatur distinctio beatae culpa repudiandae
               laborum officia deserunt voluptates.
@@ -318,7 +323,7 @@
               <div class="dot"></div>
               <div class="i"></div>
             </div>
-            <div class="description-box">
+            <div class="description-box hidden">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
               atque tenetur aspernatur distinctio beatae culpa repudiandae
               laborum officia deserunt voluptates.
@@ -330,7 +335,7 @@
               <div class="dot"></div>
               <div class="i"></div>
             </div>
-            <div class="description-box">
+            <div class="description-box hidden">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
               atque tenetur aspernatur distinctio beatae culpa repudiandae
               laborum officia deserunt voluptates.
@@ -342,7 +347,7 @@
               <div class="dot"></div>
               <div class="i"></div>
             </div>
-            <div class="description-box">
+            <div class="description-box hidden">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
               atque tenetur aspernatur distinctio beatae culpa repudiandae
               laborum officia deserunt voluptates.
@@ -354,7 +359,7 @@
     <!--===================================
        menu
     ======================================-->
-    <article class="menu-categories bg overlay veiled">
+    <article class="menu-categories bg overlay veiled" id="menu">
       <h2 class="main-heading">menu</h2>
       <div class="container">
         <div
@@ -415,13 +420,232 @@
           />
         </div>
       </div>
-      <div class="menu" id="menu-2">
+      <div class="menu hidden" id="menu-2">
         <div class="total-price-box">
           total
           <span class="total-price price">$0</span>
         </div>
         <i class="icon-plus veil-btn" data-veiltarget="menu-categories"></i>
         <div class="grid-container"></div>
+      </div>
+    </article>
+    <!--===================================
+      our founder
+    ======================================-->
+    <article class="founder">
+      <div class="container">
+        <img src="images/founder.jpg" alt="" />
+        <div class="qoute-container">
+          <h2>our founder chef</h2>
+          <p class="qoute">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+            incidunt pariatur praesentium, sequi hic accusamus ducimus quod
+            iusto alias, reprehenderit ea natus debitis magni, libero beatae
+            perspiciatis. Eaque voluptas natus architecto, officia eveniet sunt
+            beatae, maxime doloribus pariatur eum dicta!
+          </p>
+          <p class="signature">john doe</p>
+        </div>
+      </div>
+    </article>
+    <!--===================================
+      next event
+    ======================================-->
+    <article class="next-event bg">
+      <div class="container">
+        <h2 class="main-heading">our next event'll be in :</h2>
+        <div class="clock-container">
+          <div class="slot">
+            <h3>days</h3>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+          </div>
+          <div class="slot">
+            <h3>hours</h3>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+          </div>
+          <div class="slot">
+            <h3>minutes</h3>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+          </div>
+          <div class="slot">
+            <h3>seconds</h3>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+            <div class="rotor"></div>
+          </div>
+        </div>
+        <p>make sure you are around</p>
+      </div>
+    </article>
+    <!--===================================
+      chefs
+    ======================================-->
+    <article class="chefs veiled">
+      <h2 class="main-heading">our chefs</h2>
+      <div class="container">
+        <div class="chef-card">
+          <img src="images/chef1.jpg" alt="" />
+          <div class="description-box hidden">
+            <h3 class="name">john doe</h3>
+            <p class="position">Sous Chef</p>
+            <ul>
+              <li>
+                <img src="images/hand-dish.svg" alt="" />
+                <p>best dish: pasta</p>
+              </li>
+              <li>
+                <img src="images/cook-exp.svg" alt="" />
+                <p>10+ years of experience</p>
+              </li>
+              <li>
+                <img src="images/location.svg" alt="" />
+                <p>home town: chicago</p>
+              </li>
+            </ul>
+          </div>
+          <div class="info-icon veil-btn show-hidden">
+            <div class="dot"></div>
+            <div class="i"></div>
+          </div>
+        </div>
+        <div class="chef-card">
+          <img src="images/chef2.jpg" alt="" />
+          <div class="description-box hidden">
+            <h3 class="name">john doe</h3>
+            <p class="position">chef de cuisine</p>
+            <ul>
+              <li>
+                <img src="images/hand-dish.svg" alt="" />
+                <p>best dish: pasta</p>
+              </li>
+              <li>
+                <img src="images/cook-exp.svg" alt="" />
+                <p>10+ years of experience</p>
+              </li>
+              <li>
+                <img src="images/location.svg" alt="" />
+                <p>home town: chicago</p>
+              </li>
+            </ul>
+          </div>
+          <div class="info-icon veil-btn show-hidden">
+            <div class="dot"></div>
+            <div class="i"></div>
+          </div>
+        </div>
+        <div class="chef-card">
+          <img src="images/chef3.jpg" alt="" />
+          <div class="description-box hidden">
+            <h3 class="name">john doe</h3>
+            <p class="position">chef de partie</p>
+            <ul>
+              <li>
+                <img src="images/hand-dish.svg" alt="" />
+                <p>best dish: pasta</p>
+              </li>
+              <li>
+                <img src="images/cook-exp.svg" alt="" />
+                <p>10+ years of experience</p>
+              </li>
+              <li>
+                <img src="images/location.svg" alt="" />
+                <p>home town: chicago</p>
+              </li>
+            </ul>
+          </div>
+          <div class="info-icon veil-btn show-hidden">
+            <div class="dot"></div>
+            <div class="i"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!--===================================
+       reviews
+    ======================================-->
+    <article class="reviews bg overlay">
+      <div class="container">
+        <div class="reviews-carousel owl-carousel owl-theme">
+          <div class="item">
+            <img src="images/user1.jpg" alt="" />
+            <p class="name">john smith</p>
+            <div class="stars">
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+            </div>
+            <p class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              enim quibusdam mollitia porro perferendis omnis molestiae esse,
+              sequi autem qui!
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/user2.jpg" alt="" />
+            <p class="name">john smith</p>
+            <div class="stars">
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+            </div>
+            <p class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              enim quibusdam mollitia porro perferendis omnis molestiae esse,
+              sequi autem qui!
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/user3.jpg" alt="" />
+            <p class="name">john smith</p>
+            <div class="stars">
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+            </div>
+            <p class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              enim quibusdam mollitia porro perferendis omnis molestiae esse,
+              sequi autem qui!
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!--===================================
+       location & contact
+    ======================================-->
+    <article class="location-contact">
+      <div class="container">
+        <div class="map"></div>
+        <div class="contact">
+          <h2>location</h2>
+          <p>
+            <i class="icon-location"></i> 198 west 21th street,suite 721 NEW
+            YORK NY 10016
+          </p>
+          <ul>
+            <li>Office Telephone : 001 01085379709</li>
+            <li>Mobile : 001 63165370895</li>
+            <li>mail : admin@website.com</li>
+            <li>Inquiries : email@website.com</li>
+          </ul>
+        </div>
       </div>
     </article>
   </body>

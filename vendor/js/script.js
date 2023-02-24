@@ -48,287 +48,6 @@ veiled.forEach((veiledElement) =>
   })
 );
 // food menu
-// const starters = {
-//   name: "starters",
-//   items: [
-//     {
-//       name: "chips & dip",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 7,
-//     },
-//     {
-//       name: "chicken quesadilla",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 10.5,
-//     },
-//     {
-//       name: "loaded nachos",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 13.75,
-//     },
-//     {
-//       name: "scotch egg",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 7,
-//     },
-//     {
-//       name: "fried pickles",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 7,
-//     },
-//   ],
-// };
-// const meat = {
-//   name: "meat",
-//   items: [
-//     {
-//       name: "beef with green pepper",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 30,
-//       addOns: [
-//         {
-//           name: "Bearnaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Bordelaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Gremolata",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//       ],
-//     },
-//     {
-//       name: "beef with salay sauce",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 30,
-//       addOns: [
-//         {
-//           name: "Bearnaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Bordelaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Gremolata",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//       ],
-//     },
-//     {
-//       name: "sausage steak",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 30,
-//       addOns: [
-//         {
-//           name: "Bearnaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Bordelaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Gremolata",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//       ],
-//     },
-//     {
-//       name: "hangauian sausage",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 30,
-//       addOns: [
-//         {
-//           name: "Bearnaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Bordelaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Gremolata",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//       ],
-//     },
-//     {
-//       name: "polish sausage",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 30,
-//       addOns: [
-//         {
-//           name: "Bearnaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Bordelaise Sauce",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//         {
-//           name: "Gremolata",
-//           describtion:
-//             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur, doloremque nisi cumque!",
-//           price: 5,
-//         },
-//       ],
-//     },
-//   ],
-// };
-// const soup = {
-//   name: "soup",
-//   items: [
-//     {
-//       name: "tom yum kung",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.99,
-//     },
-//     {
-//       name: "pumpkin soup",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.99,
-//     },
-//     {
-//       name: "tomato soup",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.99,
-//     },
-//     {
-//       name: "potato soup",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.99,
-//     },
-//   ],
-// };
-// const salads = {
-//   name: "salads",
-//   items: [
-//     {
-//       name: "guacamole salad",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.99,
-//     },
-//     {
-//       name: "checkin salad",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.99,
-//     },
-//     {
-//       name: "greek salad",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.99,
-//     },
-//   ],
-// };
-// const burgers = {
-//   name: "burgers",
-//   items: [
-//     {
-//       name: "angus beef burger",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 9.95,
-//     },
-//     {
-//       name: "mushroom swiss burger",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 11.95,
-//     },
-//     {
-//       name: "kickory burger",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 9.5,
-//     },
-//     {
-//       name: "santa fe burger",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 11,
-//     },
-//   ],
-// };
-// const dessert = {
-//   name: "dessert",
-//   items: [
-//     {
-//       name: "molten chocolate cake",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.5,
-//     },
-//     {
-//       name: "cherry cobbler",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 5.5,
-//     },
-//     {
-//       name: "black the mousse cake",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 6.5,
-//     },
-//     {
-//       name: "carrot cake",
-//       describtion:
-//         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates perspiciatis pariatur",
-//       price: 4,
-//     },
-//   ],
-// };
-const mainMenu = [starters, meat, soup, salads, burgers, dessert];
 const foodMenus = document.querySelectorAll(".menu");
 function showMenu(menuArr, menu) {
   const gridContainer = document.createElement("div");
@@ -346,7 +65,7 @@ function showMenu(menuArr, menu) {
       itemContainer.innerHTML = `<div class="item-box">
                   <div class="check-box"></div>
                   <p class="item-name">${item.name}</p>
-                  <input type="number" class="quantity" value="1" />
+                  <input type="number" class="quantity" value="1" min="1" />
                   ${
                     item.addOns
                       ? `<div>
@@ -370,7 +89,7 @@ function showMenu(menuArr, menu) {
           li.innerHTML = `<div class="item-box">
                   <div class="check-box"></div>
                   <p class="item-name">${addOn.name}</p>
-                  <input type="number" class="quantity" value="1" />
+                  <input type="number" class="quantity" value="1" min="1" />
                   <span class="price">$${addOn.price}</span>
                   ${
                     addOn.describtion
@@ -389,21 +108,28 @@ function showMenu(menuArr, menu) {
   });
   menu.append(gridContainer);
 }
-const reservMenu = document.querySelector(".reserv .menu");
-showMenu(mainMenu, reservMenu);
-
+let mainMenu = [];
+const getMenu = fetch("vendor/js/menu.json")
+  .then((result) => (result = result.json()))
+  .then((result) => {
+    mainMenu = result;
+    return mainMenu;
+  })
+  .then((mainMenu) => {
+    const reservMenu = document.querySelector(".reserv .menu");
+    showMenu(mainMenu, reservMenu);
+    return mainMenu;
+  });
+// cart
 const cart = {
   items: [],
   totalPrice: 0,
 };
-function calculatePrice(add, priceParent) {
-  const totalAddedPriceText = priceParent.querySelector(".price").innerHTML;
-  const totalAddedPrice = Number(totalAddedPriceText.match(/[^$]/g).join(""));
-  if (add) {
-    cart.totalPrice += totalAddedPrice;
-  } else {
-    cart.totalPrice -= totalAddedPrice;
-  }
+function calculatePrice() {
+  cart.totalPrice = 0;
+  cart.items.forEach((item) => {
+    cart.totalPrice += Number(item.price) * Number(item.quantity);
+  });
   const totalPrices = document.querySelectorAll(
     ".total-price-box .total-price"
   );
@@ -411,60 +137,93 @@ function calculatePrice(add, priceParent) {
     price.innerHTML = `$${cart.totalPrice.toFixed(2)}`;
   });
 }
-function addOrRemoveItemToCart(add, clicked) {
+function addOrRemoveItemToCart(add, clicked, quantity) {
   const menuName = clicked
     .closest(".menu-column")
     .querySelector(".menu-name").textContent;
   const itemName =
     clicked.parentElement.querySelector(".item-name").textContent;
   if (add) {
-    cart.items.push(
-      mainMenu
-        .find((menu) => menu.name === menuName)
-        .items.find((item) => item.name === itemName)
-    );
+    const itemToAdd = mainMenu
+      .find((menu) => menu.name === menuName)
+      .items.find((item) => item.name === itemName);
+    itemToAdd.quantity = quantity;
+    cart.items.push(itemToAdd);
   } else {
     const itemIndex = cart.items.findIndex((item) => item.name === itemName);
     cart.items.splice(itemIndex, 1);
   }
 }
-function checkCartItems(add, clicked) {
+function matchItemBoxes(clicked) {
+  let clickedItemBox = [];
   const clickedMenu = clicked.closest(".menu");
-  const clickedItemName =
-    clicked.parentElement.querySelector(".item-name").textContent;
+  const clickedItemName = clicked
+    .closest(".item-box")
+    .querySelector(".item-name").textContent;
   const menusToCheck = [...foodMenus].filter(
     (menu) => menu.id !== clickedMenu.id
   );
   menusToCheck.forEach((menu) => {
     const itemBoxes = menu.querySelectorAll(".item-box");
-    const clickedItemBox = [...itemBoxes].find(
-      (itemBox) =>
-        itemBox.querySelector(".item-name").textContent === clickedItemName
+    clickedItemBox.push(
+      [...itemBoxes].find(
+        (itemBox) =>
+          itemBox.querySelector(".item-name").textContent === clickedItemName
+      )
     );
-    if (clickedItemBox) {
-      if (add) {
-        clickedItemBox.querySelector(".check-box").classList.add("checked");
-      } else {
-        clickedItemBox.querySelector(".check-box").classList.remove("checked");
-      }
-    }
   });
+  return clickedItemBox;
 }
 foodMenus.forEach((menu) => {
   menu.addEventListener("click", (e) => {
     const clicked = e.target;
-    if (clicked.classList.contains("add-ons-icon")) {
+    if (clicked.classList.contains("check-box")) {
+      clicked.classList.toggle("checked");
+      const itemQuantity =
+        clicked.parentElement.querySelector(".quantity").value;
+
+      const addOrRemove = clicked.classList.contains("checked");
+      addOrRemoveItemToCart(addOrRemove, clicked, itemQuantity);
+      calculatePrice();
+      const matchedItemBoxes = matchItemBoxes(clicked);
+      if (matchedItemBoxes[0]) {
+        if (addOrRemove) {
+          matchedItemBoxes.forEach((box) => {
+            box.querySelector(".check-box").classList.add("checked");
+          });
+        } else {
+          matchedItemBoxes.forEach((box) => {
+            box.querySelector(".check-box").classList.remove("checked");
+          });
+        }
+      }
+    } else if (clicked.classList.contains("add-ons-icon")) {
       clicked
         .closest(".item-box")
         .nextElementSibling.classList.toggle("active");
-    } else if (clicked.classList.contains("check-box")) {
-      clicked.classList.toggle("checked");
-      const addOrRemove = clicked.classList.contains("checked");
-      calculatePrice(addOrRemove, clicked.parentElement);
-      addOrRemoveItemToCart(addOrRemove, clicked);
-      checkCartItems(addOrRemove, clicked);
     }
   });
+});
+getMenu.then(() => {
+  foodMenus.forEach((quantity) =>
+    quantity.addEventListener("change", (e) => {
+      const changedItemName = e.target
+        .closest(".item-box")
+        .querySelector(".item-name").textContent;
+      cart.items.forEach((item) =>
+        item.name === changedItemName ? (item.quantity = e.target.value) : ""
+      );
+      calculatePrice();
+      const matchedItemBoxes = matchItemBoxes(e.target);
+      console.log(matchedItemBoxes);
+      if (matchedItemBoxes[0]) {
+        console.log(matchedItemBoxes);
+        matchedItemBoxes.forEach((box) => {
+          box.querySelector(".quantity").value = e.target.value;
+        });
+      }
+    })
+  );
 });
 // initiate offers of the week carousel
 $(".offer-carousel").owlCarousel({
@@ -489,8 +248,8 @@ menuCategories.addEventListener("click", (e) => {
     e.target.classList.contains("menu-box")
   ) {
     const menuName = e.target.dataset.name;
-    const mainMenuColumns = [...foodMenus]
-      .find((menu) => menu.id === "menu-1")
+    const mainMenuColumns = document
+      .querySelector("#menu-1")
       .querySelectorAll(".menu-column");
     const singleMenuColumn = [...mainMenuColumns].find(
       (column) => column.querySelector(".menu-name").textContent === menuName
@@ -498,4 +257,17 @@ menuCategories.addEventListener("click", (e) => {
     menuCategoriesGrid.innerHTML = ``;
     menuCategoriesGrid.append(singleMenuColumn.cloneNode(true));
   }
+});
+// initiate offers of the week carousel
+$(".reviews-carousel").owlCarousel({
+  loop: true,
+  margin: 5,
+  nav: true,
+  items: 1,
+  center: true,
+  dots: false,
+  navText: [
+    `<div><i class='icon-angle-left'></i><span>pr<br />ev</span></div>`,
+    `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
+  ],
 });
