@@ -1001,7 +1001,7 @@ nav .logo {
 }
 /* food menu section */
 .menu-categories {
-  background-image: url(../../images/food-menu-bg.jpg);
+  background-image: url(../../images/food-menu-bg.webp);
 }
 .menu-categories::after {
   backdrop-filter: blur(10px);
@@ -1148,7 +1148,7 @@ nav .logo {
 
 /* reviews */
 article.reviews {
-  background-image: url(../../images/gallery.jpg);
+  background-image: url(../../images/gallery.webp);
   color: var(--white-color, #fff);
   margin-bottom: 0;
 }
@@ -1196,6 +1196,17 @@ article.location-contact {
   background-color: var(--grey-color);
   color: var(--white-color, #fff);
 }
+.location-contact .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .location-contact h2 {
+  color: var(--light-green-color);
+  margin-bottom: 25px;
+}
+.location-contact ul li {
+  margin: 25px 0;
+}
+.location-contact i {
   color: var(--light-green-color);
 }
