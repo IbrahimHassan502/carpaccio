@@ -271,3 +271,8 @@ $(".reviews-carousel").owlCarousel({
     `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
   ],
 });
+// mobile menu
+const menuButton = document.querySelector(".menu-button");
+menuButton.addEventListener("click", (e) => {
+  e.currentTarget.classList.toggle("active");
+});
