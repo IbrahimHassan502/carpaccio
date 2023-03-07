@@ -16,12 +16,7 @@ $(".special-carousel").owlCarousel({
 const veiled = document.querySelectorAll(".veiled");
 veiled.forEach((veiledElement) =>
   veiledElement.addEventListener("click", (e) => {
-    let veilButton;
-    if (e.target.classList.contains("veil-btn")) {
-      veilButton = e.target;
-    } else if (e.target.parentElement.classList.contains("veil-btn")) {
-      veilButton = e.target.parentElement;
-    }
+    const veilButton = e.target.closest(".veil-btn");
     if (veilButton) {
       veilButton.classList.toggle("active");
 
@@ -272,7 +267,7 @@ $(".reviews-carousel").owlCarousel({
   ],
 });
 // mobile menu
-const menuButton = document.querySelector(".menu-button");
-menuButton.addEventListener("click", (e) => {
-  e.currentTarget.classList.toggle("active");
-});
+// const menuButton = document.querySelector(".menu-button");
+// menuButton.addEventListener("click", (e) => {
+//   e.currentTarget.classList.toggle("active");
+// });
