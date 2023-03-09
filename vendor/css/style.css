@@ -1310,6 +1310,93 @@ nav .logo {
 .event h3 {
   color: var(--white-color, #fff);
 }
+.event .clock-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 60px 0;
+}
+.event .slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.event .slot h3 {
+  margin-bottom: 20px;
+}
+.event .rotor {
+  position: relative;
+  width: 105px;
+  height: 110px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px 5px;
+}
+.event .rotor .group {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 350px;
+  perspective-origin: center;
+}
+.event .rotor .front {
+  background: #95ce16;
+  z-index: 2;
+}
+.event .rotor .top {
+  top: 0;
+  transform-origin: bottom;
+}
+.event .rotor .rear.top {
+  z-index: 1;
+}
+.event .rotor .top span {
+  top: 100%;
+}
+.event .rotor .bottom {
+  bottom: 0;
+}
+.event .rotor .rear.bottom {
+  z-index: 2;
+}
+.event .rotor .front.bottom {
+  z-index: 1;
+}
+.event .rotor .right {
+  right: 0;
+}
+.event .rotor .group div span {
+  font-size: 70px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.event .rotor .group > div {
+  position: absolute;
+  width: 100%;
+  height: calc(50% - 0.5px);
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+.event .rotor .rear {
+  background-color: #95ce16;
+}
+.event .rotor .rear.bottom {
+  transform-origin: top;
+  /* transform: rotate3d(10, 0, 0, 180deg); */
+  transform: rotateX(180deg);
+}
+
+.flip-front {
+  /* transform: rotate3d(10, 0, 0, -180deg); */
+  transform: rotateX(-180deg);
+  transition: 0.85s;
+}
+.event .rotor .rear.bottom.flip-rear {
+  /* transform: rotate3d(10, 0, 0, 0deg); */
+  transform: rotateX(0deg);
+  transition: 0.85s;
+}
+
 /* chefs */
 .chefs .container {
   display: grid;
@@ -1351,7 +1438,6 @@ nav .logo {
 .chef-card .description-box img {
   width: 30px;
 }
-
 /* reviews */
 article.reviews {
   background-image: url(../../images/gallery.webp);

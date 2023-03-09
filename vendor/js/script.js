@@ -220,19 +220,6 @@ getMenu.then(() => {
     })
   );
 });
-// initiate offers of the week carousel
-$(".offer-carousel").owlCarousel({
-  loop: true,
-  margin: 5,
-  nav: true,
-  items: 3,
-  center: true,
-  dots: false,
-  navText: [
-    `<div><i class='icon-angle-left'></i><span>pr<br />ev</span></div>`,
-    `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
-  ],
-});
 // menu categories
 const menuCategories = document.querySelector(".menu-categories");
 const menuCategoriesGrid = menuCategories.querySelector(".grid-container");
@@ -253,7 +240,7 @@ menuCategories.addEventListener("click", (e) => {
     menuCategoriesGrid.append(singleMenuColumn.cloneNode(true));
   }
 });
-// initiate offers of the week carousel
+// initiate reviews carousel
 $(".reviews-carousel").owlCarousel({
   loop: true,
   margin: 5,
@@ -266,8 +253,75 @@ $(".reviews-carousel").owlCarousel({
     `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
   ],
 });
-// mobile menu
-// const menuButton = document.querySelector(".menu-button");
-// menuButton.addEventListener("click", (e) => {
-//   e.currentTarget.classList.toggle("active");
-// });
+// flipping clock
+function fillSlot(clock, slot, totalDayNum) {
+  const dayNum = Math.floor(totalDayNum);
+  const hourNum = (totalDayNum - dayNum) * 24;
+  const minuteNum = (hourNum - Math.floor(hourNum)) * 60;
+  const secondNum = (minuteNum - Math.floor(minuteNum)) * 60;
+  let slotNum = 0;
+  if (slot === "days") {
+    slotNum = dayNum.toString().split("");
+  } else if (slot === "hours") {
+    slotNum = hourNum.toString().split("");
+  } else if (slot === "minutes") {
+
+  }
+  const fronts = clock.querySelectorAll(`.${slot} .front span`);
+  if (slotNum.length > 1 && slotNum.length != 0) {
+    fronts.forEach(
+      (front) =>
+        (front.textContent = front.parentElement.classList.contains("left")
+          ? slotNum[0]
+          : slotNum[1])
+    );
+  } else if (slotNum.length === 1) {
+    fronts.forEach((front) => {
+      front.textContent = front.parentElement.classList.contains("left")
+        ? 0
+        : slotNum[0];
+    });
+  }
+}
+function startClock(timeInMills) {
+  const clock = document.querySelector(".clock-container");
+  const totalDayNum = timeInMills / (1000 * 60 * 60 * 24);
+  fillSlot(clock, "days", totalDayNum);
+  fillSlot(clock, "hours", totalDayNum);
+}
+
+const timeInMills = 86400000 * 3.5;
+startClock(timeInMills);
+
+function minusOne(group) {
+  let startValue = Number(group.querySelector(".front.top").textContent);
+  const topFront = group.querySelector(".front.top");
+  const bottomFront = group.querySelector(".front.bottom");
+  const topRear = group.querySelector(".rear.top");
+  const bottomRear = group.querySelector(".rear.bottom");
+  if (startValue == 0) {
+    startValue = 10;
+  }
+
+  topFront.classList.add("flip-front");
+  bottomRear.classList.add("flip-rear");
+  topRear.querySelector("span").textContent = startValue - 1;
+  bottomRear.querySelector("span").textContent = startValue - 1;
+  setTimeout(() => {
+    topFront.classList.remove("front");
+    topFront.classList.add("rear");
+    topRear.classList.remove("rear");
+    topRear.classList.add("front");
+    topFront.classList.remove("flip-front");
+
+    bottomFront.classList.remove("front");
+    bottomFront.classList.add("rear");
+    bottomRear.classList.remove("rear");
+    bottomRear.classList.add("front");
+    bottomRear.classList.remove("flip-rear");
+  }, 1000);
+}
+const seconds = document.querySelector(".clock-container .seconds");
+// console.log(seconds.querySelector(".group.right"));
+setInterval(() => minusOne(seconds.querySelector(".group.right")), 1000);
+// setTimeout(() => minusOne(seconds.querySelector(".group.right")), 3000);
