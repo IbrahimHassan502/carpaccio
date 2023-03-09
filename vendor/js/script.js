@@ -210,9 +210,7 @@ getMenu.then(() => {
       );
       calculatePrice();
       const matchedItemBoxes = matchItemBoxes(e.target);
-      console.log(matchedItemBoxes);
       if (matchedItemBoxes[0]) {
-        console.log(matchedItemBoxes);
         matchedItemBoxes.forEach((box) => {
           box.querySelector(".quantity").value = e.target.value;
         });
@@ -256,16 +254,19 @@ $(".reviews-carousel").owlCarousel({
 // flipping clock
 function fillSlot(clock, slot, totalDayNum) {
   const dayNum = Math.floor(totalDayNum);
-  const hourNum = (totalDayNum - dayNum) * 24;
-  const minuteNum = (hourNum - Math.floor(hourNum)) * 60;
-  const secondNum = (minuteNum - Math.floor(minuteNum)) * 60;
+  const hourNum = (totalDayNum % 1) * 24;
+  const minuteNum = (hourNum % 1) * 60;
+  const secondNum = (minuteNum % 1) * 60;
+
   let slotNum = 0;
   if (slot === "days") {
-    slotNum = dayNum.toString().split("");
+    slotNum = Math.floor(dayNum).toString().split("");
   } else if (slot === "hours") {
-    slotNum = hourNum.toString().split("");
+    slotNum = Math.floor(hourNum).toString().split("");
   } else if (slot === "minutes") {
-
+    slotNum = Math.floor(minuteNum).toString().split("");
+  } else if (slot === "seconds") {
+    slotNum = Math.floor(secondNum).toString().split("");
   }
   const fronts = clock.querySelectorAll(`.${slot} .front span`);
   if (slotNum.length > 1 && slotNum.length != 0) {
@@ -288,9 +289,10 @@ function startClock(timeInMills) {
   const totalDayNum = timeInMills / (1000 * 60 * 60 * 24);
   fillSlot(clock, "days", totalDayNum);
   fillSlot(clock, "hours", totalDayNum);
+  fillSlot(clock, "minutes", totalDayNum);
+  fillSlot(clock, "seconds", totalDayNum);
 }
-
-const timeInMills = 86400000 * 3.5;
+let timeInMills = 45020000 * 2;
 startClock(timeInMills);
 
 function minusOne(group) {
@@ -299,14 +301,58 @@ function minusOne(group) {
   const bottomFront = group.querySelector(".front.bottom");
   const topRear = group.querySelector(".rear.top");
   const bottomRear = group.querySelector(".rear.bottom");
-  if (startValue == 0) {
-    startValue = 10;
+  if (startValue === 0 && timeInMills != 0) {
+    const rotorClassList = group.closest(".rotor").classList;
+    if (
+      (rotorClassList.contains("seconds") ||
+        rotorClassList.contains("minutes")) &&
+      group.classList.contains("right")
+    ) {
+      startValue = 10;
+      minusOne(group.previousElementSibling);
+    } else if (
+      (rotorClassList.contains("seconds") ||
+        rotorClassList.contains("minutes")) &&
+      group.classList.contains("left")
+    ) {
+      startValue = 6;
+      minusOne(
+        group
+          .closest(".slot")
+          .previousElementSibling.querySelector(".group.right")
+      );
+    } else if (
+      rotorClassList.contains("hours") &&
+      group.classList.contains("right")
+    ) {
+      if (
+        group.previousElementSibling.querySelector(".front span").textContent !=
+        0
+      ) {
+        startValue = 10;
+        minusOne(group.previousElementSibling);
+      } else {
+        startValue = 0;
+        return false;
+      }
+    } else if (
+      rotorClassList.contains("hours") &&
+      group.classList.contains("left")
+    ) {
+      startValue = 3;
+      minusOne(
+        group
+          .closest(".slot")
+          .previousElementSibling.querySelector(".group.right")
+      );
+    }
   }
 
   topFront.classList.add("flip-front");
   bottomRear.classList.add("flip-rear");
   topRear.querySelector("span").textContent = startValue - 1;
   bottomRear.querySelector("span").textContent = startValue - 1;
+  timeInMills -= 1000;
   setTimeout(() => {
     topFront.classList.remove("front");
     topFront.classList.add("rear");
@@ -319,9 +365,7 @@ function minusOne(group) {
     bottomRear.classList.remove("rear");
     bottomRear.classList.add("front");
     bottomRear.classList.remove("flip-rear");
-  }, 1000);
+  }, 10);
 }
 const seconds = document.querySelector(".clock-container .seconds");
-// console.log(seconds.querySelector(".group.right"));
-setInterval(() => minusOne(seconds.querySelector(".group.right")), 1000);
-// setTimeout(() => minusOne(seconds.querySelector(".group.right")), 3000);
+setInterval(() => minusOne(seconds.querySelector(".group.right")), 300);
