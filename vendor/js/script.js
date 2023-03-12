@@ -252,23 +252,10 @@ $(".reviews-carousel").owlCarousel({
   ],
 });
 // flipping clock
-function fillSlot(clock, slot, totalDayNum) {
-  const dayNum = Math.floor(totalDayNum);
-  const hourNum = (totalDayNum % 1) * 24;
-  const minuteNum = (hourNum % 1) * 60;
-  const secondNum = (minuteNum % 1) * 60;
-
-  let slotNum = 0;
-  if (slot === "days") {
-    slotNum = Math.floor(dayNum).toString().split("");
-  } else if (slot === "hours") {
-    slotNum = Math.floor(hourNum).toString().split("");
-  } else if (slot === "minutes") {
-    slotNum = Math.floor(minuteNum).toString().split("");
-  } else if (slot === "seconds") {
-    slotNum = Math.floor(secondNum).toString().split("");
-  }
+function fillSlot(clock, slot, intSlotNum) {
+  const slotNum = Math.floor(intSlotNum).toString().split("");
   const fronts = clock.querySelectorAll(`.${slot} .front span`);
+
   if (slotNum.length > 1 && slotNum.length != 0) {
     fronts.forEach(
       (front) =>
@@ -284,88 +271,112 @@ function fillSlot(clock, slot, totalDayNum) {
     });
   }
 }
-function startClock(timeInMills) {
-  const clock = document.querySelector(".clock-container");
-  const totalDayNum = timeInMills / (1000 * 60 * 60 * 24);
-  fillSlot(clock, "days", totalDayNum);
-  fillSlot(clock, "hours", totalDayNum);
-  fillSlot(clock, "minutes", totalDayNum);
-  fillSlot(clock, "seconds", totalDayNum);
-}
-let timeInMills = 45020000 * 2;
-startClock(timeInMills);
 
+const clock = document.querySelector(".clock-container");
+// clock.addEventListener("click", () => {
+//   console.log("working");
+//   minusOne(seconds.querySelector(".group.right"));
+// });
+let timeInMills = 45020000 * 2;
+const totalDayNum = timeInMills / (1000 * 60 * 60 * 24);
+let intDayNum = Math.floor(totalDayNum);
+fillSlot(clock, "days", intDayNum);
+let intHourNum = (totalDayNum % 1) * 24;
+fillSlot(clock, "hours", intHourNum);
+let intMinuteNum = (intHourNum % 1) * 60;
+fillSlot(clock, "minutes", intMinuteNum);
+let intSecondNum = (intMinuteNum % 1) * 60;
+fillSlot(clock, "seconds", intSecondNum);
 function minusOne(group) {
-  let startValue = Number(group.querySelector(".front.top").textContent);
-  const topFront = group.querySelector(".front.top");
-  const bottomFront = group.querySelector(".front.bottom");
-  const topRear = group.querySelector(".rear.top");
+  const topFront = group.querySelector(".top.front");
+  const topRear = group.querySelector(".top.rear");
+  const bottomFront = group.querySelector(".bottom.front");
   const bottomRear = group.querySelector(".rear.bottom");
-  if (startValue === 0 && timeInMills != 0) {
+  let startValue = Number(topFront.textContent);
+  const groupLeafs = group.querySelectorAll(".leaf");
+  // resetting when hitting minmum value
+  if (startValue === 0) {
     const rotorClassList = group.closest(".rotor").classList;
-    if (
-      (rotorClassList.contains("seconds") ||
-        rotorClassList.contains("minutes")) &&
-      group.classList.contains("right")
-    ) {
-      startValue = 10;
-      minusOne(group.previousElementSibling);
-    } else if (
-      (rotorClassList.contains("seconds") ||
-        rotorClassList.contains("minutes")) &&
-      group.classList.contains("left")
-    ) {
-      startValue = 6;
-      minusOne(
-        group
-          .closest(".slot")
-          .previousElementSibling.querySelector(".group.right")
-      );
-    } else if (
-      rotorClassList.contains("hours") &&
-      group.classList.contains("right")
-    ) {
-      if (
-        group.previousElementSibling.querySelector(".front span").textContent !=
-        0
-      ) {
-        startValue = 10;
-        minusOne(group.previousElementSibling);
+    let totalToCheck;
+    switch (rotorClassList[1]) {
+      case "seconds":
+        totalToCheck = timeInMills / 1000;
+        break;
+      case "minutes":
+        totalToCheck = timeInMills / (1000 * 60);
+        break;
+      case "hours":
+        totalToCheck = timeInMills / (1000 * 60 * 60);
+        break;
+      case "days":
+        totalToCheck = timeInMills / (1000 * 60 * 60 * 24);
+        break;
+    }
+    if (group.classList.contains("right")) {
+      if (!rotorClassList.contains("hours")) {
+        if (0 < totalToCheck && totalToCheck < 9) {
+          startValue = 10;
+        } else if (totalToCheck > 9) {
+          startValue = 10;
+          const prevGroupId = `#group-${group.id.split("-")[1] - 1}`;
+          minusOne(clock.querySelector(prevGroupId));
+        } else {
+          return false;
+        }
       } else {
-        startValue = 0;
-        return false;
+        if (0 < totalToCheck && totalToCheck < 9) {
+          startValue = 10;
+        } else if (9 < totalToCheck && totalToCheck < 24) {
+          startValue = 10;
+          const prevGroupId = `#group-${group.id.split("-")[1] - 1}`;
+          minusOne(clock.querySelector(prevGroupId));
+        } else if (totalToCheck > 24) {
+          startValue = 4;
+          const prevGroupId = `#group-${group.id.split("-")[1] - 1}`;
+          minusOne(clock.querySelector(prevGroupId));
+        } else {
+          return false;
+        }
       }
-    } else if (
-      rotorClassList.contains("hours") &&
-      group.classList.contains("left")
-    ) {
-      startValue = 3;
-      minusOne(
-        group
-          .closest(".slot")
-          .previousElementSibling.querySelector(".group.right")
-      );
+    }
+    if (group.classList.contains("left")) {
+      if (!rotorClassList.contains("hours")) {
+        if (totalToCheck > 9) {
+          startValue = 6;
+          const prevGroupId = `#group-${group.id.split("-")[1] - 1}`;
+          minusOne(clock.querySelector(prevGroupId));
+        } else if (totalToCheck < 9) {
+          return false;
+        }
+      } else {
+        if (totalToCheck > 9) {
+          startValue = 3;
+          const prevGroupId = `#group-${group.id.split("-")[1] - 1}`;
+          minusOne(clock.querySelector(prevGroupId));
+        } else if (totalToCheck < 9) {
+          return false;
+        }
+      }
     }
   }
+  // resetting when hitting minmum value
 
   topFront.classList.add("flip-front");
   bottomRear.classList.add("flip-rear");
+
   topRear.querySelector("span").textContent = startValue - 1;
   bottomRear.querySelector("span").textContent = startValue - 1;
   timeInMills -= 1000;
   setTimeout(() => {
-    topFront.classList.remove("front");
-    topFront.classList.add("rear");
-    topRear.classList.remove("rear");
-    topRear.classList.add("front");
+    groupLeafs.forEach((leaf) => {
+      leaf.classList.toggle("front");
+      leaf.classList.toggle("rear");
+    });
     topFront.classList.remove("flip-front");
-
-    bottomFront.classList.remove("front");
-    bottomFront.classList.add("rear");
-    bottomRear.classList.remove("rear");
-    bottomRear.classList.add("front");
     bottomRear.classList.remove("flip-rear");
-  }, 10);
+    topFront.querySelector("span").textContent = startValue - 1;
+    bottomFront.querySelector("span").textContent = startValue - 1;
+  }, 850); //850 milliseconds
 }
 const seconds = document.querySelector(".clock-container .seconds");
-setInterval(() => minusOne(seconds.querySelector(".group.right")), 300);
+setInterval(() => minusOne(seconds.querySelector(".group.right")), 1000);
