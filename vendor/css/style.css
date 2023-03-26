@@ -635,7 +635,7 @@ nav .logo {
   position: relative;
 }
 .hero .mobil-nav-menu {
-  background-image: url(../../images/mobil-menu-bg.jpg);
+  background-image: url(../../images/mobil-menu-bg.webp);
   cursor: pointer;
 }
 .hero .mobil-nav-menu {
