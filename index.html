@@ -247,16 +247,18 @@
               />
             </picture>
             <div class="description-box hidden">
-              <h3>beef</h3>
-              <p class="price">10$</p>
-              <ul>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-                <li>Lorem ipsum dolor sit amet consectetur.</li>
-                <li>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </li>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing</li>
-              </ul>
+              <div>
+                <h3>beef</h3>
+                <p class="price">100$</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                  <li>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  </li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing</li>
+                </ul>
+              </div>
             </div>
             <div class="info-icon veil-btn show-hidden">
               <div class="dot"></div>
@@ -283,6 +285,20 @@
                 loading="lazy"
               />
             </picture>
+            <div class="description-box hidden">
+              <div>
+                <h3>fried eggs</h3>
+                <p class="price">70$</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                  <li>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  </li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing</li>
+                </ul>
+              </div>
+            </div>
             <div class="info-icon veil-btn show-hidden">
               <div class="dot"></div>
               <div class="i"></div>
@@ -308,6 +324,20 @@
                 loading="lazy"
               />
             </picture>
+            <div class="description-box hidden">
+              <div>
+                <h3>steak</h3>
+                <p class="price">100$</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                  <li>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  </li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing</li>
+                </ul>
+              </div>
+            </div>
             <div class="info-icon veil-btn show-hidden">
               <div class="dot"></div>
               <div class="i"></div>
@@ -325,24 +355,30 @@
           <h2>make reservation</h2>
           <div class="form-row">
             <div class="input-box">
-              <input type="text" placeholder="name" name="name" />
+              <input type="text" placeholder="name" name="name" required />
               <i class="icon-user input-icon"></i>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="email" name="email" />
+              <input type="email" placeholder="email" name="email" required />
               <i class="icon-mail-1 input-icon"></i>
             </div>
           </div>
           <div class="form-row">
             <div class="input-box">
-              <input type="tel" placeholder="phone number" name="phone-num" />
+              <input
+                type="tel"
+                placeholder="phone number"
+                name="phone-num"
+                required
+              />
               <i class="icon-phone input-icon"></i>
             </div>
             <div class="input-box">
               <input
-                type="text"
+                type="date"
                 placeholder="reservation date"
                 name="reserv-date"
+                required
               />
               <i class="icon-calendar input-icon"></i>
             </div>
@@ -350,17 +386,21 @@
           <div class="form-row">
             <div class="input-box">
               <input
-                type="text"
+                type="time"
                 placeholder="reservation time"
                 name="reserv-time"
+                required
               />
               <i class="icon-clock input-icon"></i>
             </div>
             <div class="input-box">
               <input
-                type="text"
+                type="number"
+                min="1"
+                max="50"
                 placeholder="number of people"
                 name="people-num"
+                required
               />
               <i class="icon-users input-icon"></i>
             </div>
@@ -368,7 +408,12 @@
           <div class="form-row">
             <h3>Having A Big Thing ?</h3>
             <div class="input-box">
-              <input type="text" placeholder="tabels" name="tabel-num" />
+              <input
+                type="number"
+                placeholder="tabels"
+                name="tabel-num"
+                required
+              />
               <img
                 src="images/dinner-table.svg"
                 class="input-icon"
@@ -388,14 +433,23 @@
             ></i>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="name" name="name" />
+            <input type="text" placeholder="name" name="name" required />
             <i class="icon-user input-icon"></i>
           </div>
           <div class="input-box">
-            <input type="tel" placeholder="phone number" name="phone-num" />
+            <input
+              type="tel"
+              placeholder="phone number"
+              name="phone-num"
+              required
+            />
             <i class="icon-phone input-icon"></i>
           </div>
-          <textarea placeholder="specific address" name="address"></textarea>
+          <textarea
+            placeholder="specific address"
+            name="address"
+            required
+          ></textarea>
           <div class="btn-box">
             <input type="submit" value="place order" class="btn" />
             <div class="total-price-box">

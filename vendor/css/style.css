@@ -18,7 +18,7 @@ h1 {
   margin: 0.67em 0;
 }
 hr {
-  box-sizing: content-box; /* 1 */
+  box-siz: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -841,13 +841,19 @@ nav .logo {
   padding: 20px;
   color: var(--white-color);
   z-index: 3;
+  border: 1px solid;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  margin: 15px auto auto 15px;
+  display: grid;
+  place-items: center;
 }
 .special-carousel .item .description-box h3 {
-  font-size: 2em;
+  font-size: 4em;
   color: var(--white-color);
 }
 .special-carousel .item .description-box ul li {
-  margin: 15px 10px;
+  margin: 40px 10px;
 }
 
 /* ===================================
@@ -921,6 +927,16 @@ nav .logo {
 .reserv input::placeholder,
 .reserv textarea::placeholder {
   color: var(--white-color, #fff);
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png)
+    no-repeat;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
 }
 .reserv .input-box .input-icon {
   color: var(--white-color, #fff);
@@ -1339,7 +1355,8 @@ nav .logo {
   perspective-origin: center;
 }
 .event .rotor .front {
-  background: #95ce16;
+  background: var(--grey-color);
+  color: var(--light-green-color);
   z-index: 2;
 }
 .event .rotor .top {
@@ -1378,7 +1395,8 @@ nav .logo {
   backface-visibility: hidden;
 }
 .event .rotor .rear {
-  background-color: #95ce16;
+  background: var(--grey-color);
+  color: var(--light-green-color);
 }
 .event .rotor .rear.bottom {
   transform-origin: top;
@@ -1428,7 +1446,7 @@ nav .logo {
   height: 100%;
 }
 .chef-card .description-box {
-  padding: 15px;
+  padding: 40px 15px 15px 40px;
 }
 .chef-card .description-box ul li {
   display: flex;
