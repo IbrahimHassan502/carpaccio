@@ -1326,10 +1326,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .event h3 {
   color: var(--white-color, #fff);
 }
+.event .main-heading {
+  margin-bottom: 10px;
+}
 .event .clock-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 60px 0;
+}
+@media (max-width: 767px) {
+  .event .clock-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .event .slot {
   display: flex;
@@ -1400,21 +1408,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .event .rotor .rear.bottom {
   transform-origin: top;
-  /* transform: rotate3d(10, 0, 0, 180deg); */
   transform: rotateX(180deg);
 }
 
 .flip-front {
-  /* transform: rotate3d(10, 0, 0, -180deg); */
   transform: rotateX(-180deg);
   transition: 0.85s;
 }
 .event .rotor .rear.bottom.flip-rear {
-  /* transform: rotate3d(10, 0, 0, 0deg); */
   transform: rotateX(0deg);
   transition: 0.85s;
 }
-
+.event p {
+  text-transform: capitalize;
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Merienda", cursive;
+  margin-top: 20px;
+}
 /* chefs */
 .chefs .container {
   display: grid;
