@@ -18,7 +18,7 @@ h1 {
   margin: 0.67em 0;
 }
 hr {
-  box-siz: content-box; /* 1 */
+  box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -734,20 +734,6 @@ nav .logo {
   height: 100%;
   animation: flipmain 8s ease-in-out 0s infinite forwards;
 }
-@-webkit-keyframes flipmain {
-  0%,
-  30% {
-    transform: rotateX(0deg);
-  }
-  35%,
-  85% {
-    transform: rotateX(180deg);
-  }
-  90%,
-  100% {
-    transform: rotateX(0deg);
-  }
-}
 @keyframes flipmain {
   0%,
   30% {
@@ -772,20 +758,6 @@ nav .logo {
   width: 100%;
   height: 100%;
   animation: flipalt 8s ease-in-out 0s infinite forwards;
-}
-@-webkit-keyframes flipalt {
-  0%,
-  30% {
-    transform: rotateX(180deg);
-  }
-  35%,
-  85% {
-    transform: rotateX(360deg);
-  }
-  90%,
-  100% {
-    transform: rotateX(180deg);
-  }
 }
 @keyframes flipalt {
   0%,

@@ -57,7 +57,8 @@ function showMenu(menuArr, menu) {
     menu.items.forEach((item) => {
       const itemContainer = document.createElement("div");
       itemContainer.classList.add("item-container");
-      itemContainer.innerHTML = `<div class="item-box">
+      itemContainer.innerHTML = `
+                <div class="item-box">
                   <div class="check-box"></div>
                   <p class="item-name">${item.name}</p>
                   <input type="number" class="quantity" value="1" min="1" />
