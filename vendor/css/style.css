@@ -185,10 +185,12 @@ template {
 body {
   color: var(--light-grey-color);
   background-color: var(--white-color, #fff);
-  /* font-family: "Roboto", sans-serif; */
   font-size: 1.6rem;
-  /* font-weight: 400; */
-  min-height: 1000vh;
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 2rem;
+  }
 }
 h1,
 h2,
@@ -479,11 +481,6 @@ button {
   opacity: 1;
   transition: transform 0s 0s, opacity 0.4s 1s;
 }
-/* .shown {
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 0s 0s, opacity 0.4s 1s;
-} */
 /* container */
 .container {
   padding-left: 15px;
@@ -627,7 +624,7 @@ nav .logo {
 }
 .hero h1 {
   font-size: 8em;
-  margin: 10px 0;
+  margin:-10px 0 45px 0;
   color: var(--white-color, #fff);
 }
 .hero p {
@@ -810,15 +807,14 @@ nav .logo {
   overflow: hidden;
 }
 .special-carousel .item .description-box {
-  padding: 20px;
+  padding: 50px 6%;
   color: var(--white-color);
   z-index: 3;
   border: 1px solid;
+  border-radius: 5px;
   width: calc(100% - 30px);
   height: calc(100% - 30px);
   margin: 15px auto auto 15px;
-  display: grid;
-  place-items: center;
 }
 .special-carousel .item .description-box h3 {
   font-size: 4em;
@@ -900,18 +896,32 @@ nav .logo {
 .reserv textarea::placeholder {
   color: var(--white-color, #fff);
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
-  color: rgba(0, 0, 0, 0);
-  opacity: 1;
-  display: block;
-  background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png)
-    no-repeat;
-  width: 20px;
-  height: 20px;
-  border-width: thin;
+/* custmizing input field icons */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 7px;
+  padding-left: 3px;
+  border-left: 1px solid black;
+  cursor: pointer;
 }
+input[name="people-num"]::-webkit-outer-spin-button,
+input[name="people-num"]::-webkit-inner-spin-button,
+input[name="table-num"]::-webkit-outer-spin-button,
+input[name="table-num"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number][name="people-num"],
+input[type=number][name="table-num"] {
+  -moz-appearance: textfield;
+}
+/* custmizing input field icons */
 .reserv .input-box .input-icon {
-  color: var(--white-color, #fff);
+  color: #f0f3f7;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1002,7 +1012,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: max-content;
   position: absolute;
   top: 120px;
-  right: 70px;
+  right: 160px;
   max-width: 300px;
 }
 @media (max-width: 991px) {
@@ -1011,6 +1021,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     right: 50%;
     transform: translateX(50%);
   }
+}
+.menu .clear-menu-orders {
+  padding: 8px 10px;
+  width: max-content;
+  position: absolute;
+  top: 120px;
+  right: 70px;
+  background: var(--white-color);
+  color: var(--grey-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.menu .clear-menu-orders:hover {
+  background-color: var(--light-green-color);
+  color: var(--grey-color);
 }
 .menu {
   left: 0;
@@ -1074,10 +1100,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   place-items: center;
   transition: 0.2s;
 }
-/* .menu .add-ons-list li .check-box {
-  padding: 7px;
-  border-radius: 2px;
-} */
 .menu .check-box.checked {
   background: var(--green-color);
 }
@@ -1169,7 +1191,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 /* food menu section */
 .menu-categories {
-  background-image: url(../../images/food-menu-bg.webp);
+  background-image: url("../../images/food-menu-bg.webp");
 }
 .menu-categories::after {
   backdrop-filter: blur(10px);
@@ -1286,7 +1308,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 /* next-event */
 .event {
-  background: url(../../images/event.webp);
+  background: url("../../images/event.webp");
   background-position: 50% 90%;
   color: var(--white-color, #fff);
 }
@@ -1442,7 +1464,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 /* reviews */
 article.reviews {
-  background-image: url(../../images/gallery.webp);
+  background-image: url("../../images/gallery.webp");
   color: var(--white-color, #fff);
   margin-bottom: 0;
 }

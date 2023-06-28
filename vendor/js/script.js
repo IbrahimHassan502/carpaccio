@@ -149,6 +149,7 @@ function addOrRemoveItemToCart(add, clicked, quantity) {
     const itemIndex = cart.items.findIndex((item) => item.name === itemName);
     cart.items.splice(itemIndex, 1);
   }
+  console.log(cart);
 }
 function matchItemBoxes(clicked) {
   let clickedItemBox = [];
