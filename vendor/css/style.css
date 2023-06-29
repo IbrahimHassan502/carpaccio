@@ -623,9 +623,14 @@ nav .logo {
   width: 56px;
 }
 .hero h1 {
-  font-size: 8em;
+  font-size: 6em;
   margin:-10px 0 45px 0;
   color: var(--white-color, #fff);
+}
+@media (max-width: 450px) {
+  .hero h1 {
+    font-size: 4em;
+  }
 }
 .hero p {
   font-weight: 900;
