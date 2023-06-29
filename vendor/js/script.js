@@ -1,5 +1,79 @@
 "use strict";
-// initiate special of the week carousel
+// =============== adding mobile menu on mobile menu button click ===============
+const mobileMenuButton = document.querySelector(".menu-button");
+const hero = document.querySelector(".hero");
+mobileMenuButton.addEventListener("click", () => {
+  const mobileMenu = document.createElement("div");
+  ["mobil-nav-menu", "bg", "overlay", "hidden"].forEach((cls) =>
+    mobileMenu.classList.add(cls)
+  );
+  mobileMenu.innerHTML = `
+  <div class="container">
+    <div class="overlay">
+      <a href="#special">
+        <img
+          src="images/special-menu-link.webp"
+          width="640"
+          height="426"
+          alt="specials section link image"
+        />
+      </a>
+    </div>
+    <div class="overlay">
+      <a href="#reserv">
+        <img
+          src="images/reserv-menu-link.webp"
+          width="640"
+          height="426"
+          alt="reservation and order section link image"
+        />
+      </a>
+    </div>
+    <div class="overlay">
+      <a href="#menu">
+        <img
+          src="images/menu-menu-link.webp"
+          width="640"
+          height="426"
+          alt="menu section link image"
+        />
+      </a>
+    </div>
+    <div class="overlay">
+      <a href="#event">
+        <img
+          src="images/event-menu-link.webp"
+          width="640"
+          height="426"
+          alt="special event section link image"
+        />
+      </a>
+    </div>
+    <div class="overlay">
+      <a href="#chefs">
+        <img
+          src="images/chef-menu-link.webp"
+          width="640"
+          height="426"
+          alt="our chefs section link image"
+        />
+      </a>
+    </div>
+    <div class="overlay">
+      <a href="#contact">
+        <img
+          src="images/contact-menu-link.webp"
+          width="640"
+          height="426"
+          alt="contact us section link image"
+        />
+      </a>
+    </div>
+  </div>
+  `;
+  hero.appendChild(mobileMenu);
+});
+// =============== initiate special of the week carousel ===============
 $(".special-carousel").owlCarousel({
   loop: true,
   margin: 5,
@@ -12,7 +86,7 @@ $(".special-carousel").owlCarousel({
     `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
   ],
 });
-// showing special of the week info
+// =============== showing special of the week info ===============
 const veiled = document.querySelectorAll(".veiled");
 veiled.forEach((veiledElement) =>
   veiledElement.addEventListener("click", (e) => {
@@ -42,7 +116,7 @@ veiled.forEach((veiledElement) =>
     }
   })
 );
-// food menu
+// =============== food menu ===============
 const foodMenus = document.querySelectorAll(".menu");
 function showMenu(menuArr, menu) {
   const gridContainer = document.createElement("div");
@@ -220,7 +294,7 @@ getMenu.then(() => {
     })
   );
 });
-// menu categories
+// =============== menu categories ===============
 const menuCategories = document.querySelector(".menu-categories");
 const menuCategoriesGrid = menuCategories.querySelector(".grid-container");
 const menuCategoriesMenu = document.querySelector(".menu-categories .menu");
@@ -240,7 +314,7 @@ menuCategories.addEventListener("click", (e) => {
     menuCategoriesGrid.append(singleMenuColumn.cloneNode(true));
   }
 });
-// initiate reviews carousel
+// =============== initiate reviews carousel ===============
 $(".reviews-carousel").owlCarousel({
   loop: true,
   margin: 5,
@@ -253,7 +327,7 @@ $(".reviews-carousel").owlCarousel({
     `<div><span>ne<br />xt</span><i class='icon-angle-right'></i></div>`,
   ],
 });
-// flipping clock
+// =============== flipping clock ===============
 function fillSlot(clock, slot, intSlotNum) {
   const slotNum = Math.floor(intSlotNum).toString().split("");
   const fronts = clock.querySelectorAll(`.${slot} .front span`);
@@ -275,10 +349,6 @@ function fillSlot(clock, slot, intSlotNum) {
 }
 
 const clock = document.querySelector(".clock-container");
-// clock.addEventListener("click", () => {
-//   console.log("working");
-//   minusOne(seconds.querySelector(".group.right"));
-// });
 let timeInMills = 45020000 * 2;
 const totalDayNum = timeInMills / (1000 * 60 * 60 * 24);
 let intDayNum = Math.floor(totalDayNum);

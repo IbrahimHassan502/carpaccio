@@ -474,7 +474,7 @@ button {
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0s 1s, opacity 0.4s;
-  z-index: 100;
+  z-index: 50;
 }
 .veil-on .hidden {
   transform: translateY(0);
@@ -637,16 +637,15 @@ nav .logo {
   position: relative;
 }
 .hero .mobil-nav-menu {
-  background-image: url(../../images/mobil-menu-bg.webp);
-  cursor: pointer;
-}
-.hero .mobil-nav-menu {
   top: 0;
   left: 0;
   width: 100%;
   min-height: 100%;
   display: grid;
   place-items: center;
+  background-image: url("../../images/mobil-menu-bg.webp");
+  cursor: pointer;
+  padding-top: 90px;
 }
 .hero .mobil-nav-menu .container {
   display: grid;
