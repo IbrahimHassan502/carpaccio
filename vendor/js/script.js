@@ -458,17 +458,57 @@ function minusOne(group) {
 const seconds = document.querySelector(".clock-container .seconds");
 setInterval(() => minusOne(seconds.querySelector(".group.right")), 1000);
 // ==================== mapbox =======================
+const coordinates = [51.5075, -0.129958];
 const mapToken =
   "pk.eyJ1IjoiaWh0aGVtZXMiLCJhIjoiY2trcGR5OWU4MDN1dDJ4cGYxanF2ejIzYiJ9.m5GeTM3saQPbwlqjvnPvBQ";
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/streets-v11",
-  center: [-0.127758, 51.507351],
+  style: "mapbox://styles/mapbox/streets-v12",
+  center: [coordinates[1], coordinates[0]],
   zoom: 16,
 });
 map.addControl(new mapboxgl.NavigationControl());
-// Create a default Marker and add it to the map.
-const marker1 = new mapboxgl.Marker()
-  .setLngLat([-0.127758, 51.507351])
-  .addTo(map);
+// Create a DOM element for marker.
+const geojson = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      properties: {
+        message: "Foo",
+        iconSize: [27, 35.25],
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [coordinates[1], coordinates[0]],
+      },
+    },
+  ],
+};
+// Add markers to the map.
+for (const marker of geojson.features) {
+  // Create a DOM element for each marker.
+  const el = document.createElement("div");
+  const width = marker.properties.iconSize[0];
+  const height = marker.properties.iconSize[1];
+  el.className = "marker";
+  el.style.backgroundImage = `url('../../images/map-marker.svg')`;
+  el.style.backgroundRepeat = `no-repeat`;
+  el.style.width = `${width}px`;
+  el.style.height = `${height}px`;
+  el.style.backgroundSize = "100%";
+
+  el.addEventListener("click", () => {
+    window.alert(marker.properties.message);
+  });
+
+  // Add markers to the map.
+  new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
+}
+// adding google map link
+const mapContainer = document.querySelector(".map");
+const link = document.createElement("a");
+link.href = `https://www.google.com/maps/place/51%C2%B030'28.6%22N+0%C2%B007'47.9%22W/@${coordinates[0]},${coordinates[1]},17z/data=!3m1!4b1!4m4!3m3!8m2!3d${coordinates[0]}!4d${coordinates[1]}?entry=ttu`;
+link.innerHTML = `<i class="icon-resize-full"></i>`;
+mapContainer.appendChild(link);

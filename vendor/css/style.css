@@ -1133,7 +1133,7 @@ input[type=number][name="table-num"] {
   background: var(--green-color);
 }
 .menu .check-box::after {
-  content: "\e809";
+  content: "\e80a";
   font-family: fontello;
   position: absolute;
   z-index: 2;
@@ -1553,18 +1553,31 @@ article.location-contact {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
 }
+@media (max-width: 767px) {
+  .location-contact .container {
+    grid-template-columns: 1fr;
+  }
+}
 /* map styles */
 .location-contact .map {
+  position: relative;
   border-radius: 5px;
+  min-height: 294px;
 }
-.location-contact .map a {
-  display: block;
+.location-contact .map i {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  aspect-ratio: 1/1;
+  font-size: 1.5em;
+  background: var(--white-color);
+  color: black;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  bottom: 5px;
+  right: 5px;
   z-index: 10;
 }
-a.mapboxgl-ctrl-logo {display: none;}
+a.mapboxgl-ctrl-logo,
 div.mapboxgl-ctrl-bottom-right {display: none;}
 /* map styles */
 .location-contact h2 {
