@@ -1,4 +1,10 @@
 "use strict";
+// =============== removing load screen when dom is loaded ==============
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingScreen = document.querySelector(".loading-screen");
+  loadingScreen.style.opacity = 0;
+  setTimeout(() => loadingScreen.remove(), 1000);
+});
 // =============== adding mobile menu on mobile menu button click ===============
 const mobileMenuButton = document.querySelector(".menu-button");
 const hero = document.querySelector(".hero");
@@ -431,8 +437,7 @@ function minusOne(group) {
       }
     }
   }
-  // resetting when hitting minmum value
-
+  // ================ resetting when hitting minmum value ===============
   topFront.classList.add("flip-front");
   bottomRear.classList.add("flip-rear");
 
@@ -452,3 +457,18 @@ function minusOne(group) {
 }
 const seconds = document.querySelector(".clock-container .seconds");
 setInterval(() => minusOne(seconds.querySelector(".group.right")), 1000);
+// ==================== mapbox =======================
+const mapToken =
+  "pk.eyJ1IjoiaWh0aGVtZXMiLCJhIjoiY2trcGR5OWU4MDN1dDJ4cGYxanF2ejIzYiJ9.m5GeTM3saQPbwlqjvnPvBQ";
+mapboxgl.accessToken = mapToken;
+const map = new mapboxgl.Map({
+  container: "map",
+  style: "mapbox://styles/mapbox/streets-v11",
+  center: [-0.127758, 51.507351],
+  zoom: 16,
+});
+map.addControl(new mapboxgl.NavigationControl());
+// Create a default Marker and add it to the map.
+const marker1 = new mapboxgl.Marker()
+  .setLngLat([-0.127758, 51.507351])
+  .addTo(map);
