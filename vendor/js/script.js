@@ -124,6 +124,7 @@ veiled.forEach((veiledElement) =>
 );
 // =============== food menu ===============
 const foodMenus = document.querySelectorAll(".menu");
+// function to spread the menu items in the ui
 function showMenu(menuArr, menu) {
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("grid-container");
@@ -184,6 +185,7 @@ function showMenu(menuArr, menu) {
   });
   menu.append(gridContainer);
 }
+// fetching the food menu from the json file
 let mainMenu = [];
 const getMenu = fetch("vendor/js/menu.json")
   .then((result) => (result = result.json()))
@@ -194,13 +196,15 @@ const getMenu = fetch("vendor/js/menu.json")
   .then((mainMenu) => {
     const reservMenu = document.querySelector(".reserv .menu");
     showMenu(mainMenu, reservMenu);
+    console.log(mainMenu);
     return mainMenu;
   });
-// cart
+// ============== cart ==================
 const cart = {
   items: [],
   totalPrice: 0,
 };
+// function to calculate total price from cart items
 function calculatePrice() {
   cart.totalPrice = 0;
   cart.items.forEach((item) => {
@@ -213,16 +217,24 @@ function calculatePrice() {
     price.innerHTML = `$${cart.totalPrice.toFixed(2)}`;
   });
 }
-function addOrRemoveItemToCart(add, clicked, quantity) {
+// function to add or remove items from cart
+function addOrRemoveItemToCart(add, clicked, quantity, type, itemParentName) {
   const menuName = clicked
     .closest(".menu-column")
     .querySelector(".menu-name").textContent;
   const itemName =
     clicked.parentElement.querySelector(".item-name").textContent;
-  if (add) {
+  if (add && type === "main") {
     const itemToAdd = mainMenu
       .find((menu) => menu.name === menuName)
       .items.find((item) => item.name === itemName);
+    itemToAdd.quantity = quantity;
+    cart.items.push(itemToAdd);
+  } else if (add && type === "sub") {
+    const itemToAdd = mainMenu
+      .find((menu) => menu.name === menuName)
+      .items.find((item) => item.name === itemParentName)
+      .addOns.find((addOn) => addOn.name === itemName);
     itemToAdd.quantity = quantity;
     cart.items.push(itemToAdd);
   } else {
@@ -251,6 +263,7 @@ function matchItemBoxes(clicked) {
   });
   return clickedItemBox;
 }
+
 foodMenus.forEach((menu) => {
   menu.addEventListener("click", (e) => {
     const clicked = e.target;
@@ -260,8 +273,22 @@ foodMenus.forEach((menu) => {
         clicked.parentElement.querySelector(".quantity").value;
 
       const addOrRemove = clicked.classList.contains("checked");
-      addOrRemoveItemToCart(addOrRemove, clicked, itemQuantity);
+      const type = clicked.closest(".add-ons-list") ? "sub" : "main";
+      const itemParentName =
+        type === "sub"
+          ? clicked
+              .closest(".add-ons-list")
+              .previousSibling.querySelector(".item-name").textContent
+          : "";
+      addOrRemoveItemToCart(
+        addOrRemove,
+        clicked,
+        itemQuantity,
+        type,
+        itemParentName
+      );
       calculatePrice();
+
       const matchedItemBoxes = matchItemBoxes(clicked);
       if (matchedItemBoxes[0]) {
         if (addOrRemove) {
