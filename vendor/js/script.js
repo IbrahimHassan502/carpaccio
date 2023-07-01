@@ -559,30 +559,9 @@ const geojson = {
     },
   ],
 };
-// Add markers to the map.
-// for (const marker of geojson.features) {
-// Create a DOM element for each marker.
-// const el = document.createElement("div");
-// const width = marker.properties.iconSize[0];
-// const height = marker.properties.iconSize[1];
-// el.className = "marker";
-// el.style.backgroundImage = `url('../../images/map-marker.svg')`;
-// el.style.backgroundRepeat = `no-repeat`;
-// el.style.width = `${width}px`;
-// el.style.height = `${height}px`;
-// el.style.backgroundSize = "100%";
-
-// el.addEventListener("click", () => {
-//   window.alert(marker.properties.message);
-// });
-
-// // Add custom markers to the map.
-// new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
-// }
-// Set marker options.
+// adding marker
 const marker = new mapboxgl.Marker({
   color: "#ea4335",
-  draggable: true,
 })
   .setLngLat([coordinates[1], coordinates[0]])
   .addTo(map);

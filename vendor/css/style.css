@@ -1596,9 +1596,6 @@ a.mapboxgl-ctrl-logo,
 div.mapboxgl-ctrl-bottom-right {
   display: none;
 }
-.mapboxgl-marker.mapboxgl-marker-anchor-center {
-  
-}
 .mapboxgl-marker.mapboxgl-marker-anchor-center circle {
   fill: #b21511;
 }
@@ -1612,4 +1609,9 @@ div.mapboxgl-ctrl-bottom-right {
 }
 .location-contact i {
   color: var(--light-green-color);
+}
+@media (max-width: 767px) {
+  .location-contact i {
+    font-size: 1.5em;
+  }
 }
