@@ -4,6 +4,7 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  text-size-adjust: 100%;
 }
 
 body {
@@ -531,7 +532,7 @@ button {
   animation: switch-colors 3s alternate infinite;
 }
 @keyframes switch-colors {
-  0% {    
+  0% {
     fill: var(--light-green-color);
   }
   100% {
@@ -649,7 +650,7 @@ nav .logo {
 }
 .hero h1 {
   font-size: 6em;
-  margin:-10px 0 45px 0;
+  margin: -10px 0 45px 0;
   color: var(--white-color, #fff);
 }
 @media (max-width: 450px) {
@@ -863,6 +864,7 @@ nav .logo {
 }
 .reserv::after {
   background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 
@@ -925,6 +927,15 @@ nav .logo {
 .reserv textarea::placeholder {
   color: var(--white-color, #fff);
 }
+.reserv .date-placeholder,
+.reserv .time-placeholder {
+  display: none;
+  color: var(--white-color);
+  position: absolute;
+  top: calc(50% + -1px);
+  left: 16px;
+  transform: translateY(-50%);
+}
 /* custmizing input field icons */
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
@@ -944,9 +955,10 @@ input[name="table-num"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type=number][name="people-num"],
-input[type=number][name="table-num"] {
+input[type="number"][name="people-num"],
+input[type="number"][name="table-num"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 /* custmizing input field icons */
 .reserv .input-box .input-icon {
@@ -1223,6 +1235,7 @@ input[type=number][name="table-num"] {
   background-image: url("../../images/food-menu-bg.webp");
 }
 .menu-categories::after {
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .menu-categories h2 {
@@ -1343,6 +1356,7 @@ input[type=number][name="table-num"] {
 }
 .event::after {
   background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 .event h2,
@@ -1360,6 +1374,7 @@ input[type=number][name="table-num"] {
 @media (max-width: 767px) {
   .event .clock-container {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
   }
 }
 .event .slot {
@@ -1368,7 +1383,7 @@ input[type=number][name="table-num"] {
   align-items: center;
 }
 .event .slot h3 {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .event .rotor {
   position: relative;
@@ -1546,7 +1561,7 @@ article.reviews {
 article.location-contact {
   margin: 0;
   background-color: var(--grey-color);
-  color: var(--white-color, #fff);
+  color: var(--white-color);
 }
 .location-contact .container {
   display: grid;
@@ -1578,7 +1593,15 @@ article.location-contact {
   z-index: 10;
 }
 a.mapboxgl-ctrl-logo,
-div.mapboxgl-ctrl-bottom-right {display: none;}
+div.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+.mapboxgl-marker.mapboxgl-marker-anchor-center {
+  
+}
+.mapboxgl-marker.mapboxgl-marker-anchor-center circle {
+  fill: #b21511;
+}
 /* map styles */
 .location-contact h2 {
   color: var(--light-green-color);
