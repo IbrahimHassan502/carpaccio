@@ -644,6 +644,7 @@ nav .logo {
   align-items: center;
   color: var(--white-color, #fff);
   font-family: "Merienda", cursive;
+  overflow: hidden;
 }
 .hero > img {
   width: 56px;
@@ -666,7 +667,8 @@ nav .logo {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100vh;
+  overflow: scroll;
   display: grid;
   place-items: center;
   background-image: url("../../images/mobil-menu-bg.webp");
@@ -927,16 +929,24 @@ nav .logo {
 .reserv textarea::placeholder {
   color: var(--white-color, #fff);
 }
+/* hiding input date and input time placeholders to add custom one as the placeholder doesn;t show cross borwsers the code from stack overflow */
+input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+input[type="date"]:in-range::-webkit-datetime-edit-text {
+  color: transparent;
+  display: none;
+}
 .reserv .date-placeholder,
 .reserv .time-placeholder {
-  display: none;
+  display: block;
   color: var(--white-color);
   position: absolute;
-  top: calc(50% + -1px);
-  left: 16px;
+  top: 50%;
   transform: translateY(-50%);
+  left: 10px;
 }
-/* custmizing input field icons */
+/* styling input time and date default icons */
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -948,6 +958,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border-left: 1px solid black;
   cursor: pointer;
 }
+/* hiding increment and decrement arrows */
 input[name="people-num"]::-webkit-outer-spin-button,
 input[name="people-num"]::-webkit-inner-spin-button,
 input[name="table-num"]::-webkit-outer-spin-button,
@@ -960,7 +971,7 @@ input[type="number"][name="table-num"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-/* custmizing input field icons */
+/* styling input field icons */
 .reserv .input-box .input-icon {
   color: #f0f3f7;
   position: absolute;
@@ -973,6 +984,7 @@ input[type="number"][name="table-num"] {
 .reserv .input-box img.input-icon {
   width: 22.4px;
 }
+
 .reserv .btn {
   color: var(--white-color, #fff);
   text-transform: capitalize;
