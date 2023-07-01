@@ -161,6 +161,7 @@ function showMenu(menuArr, menu) {
       if (item.addOns) {
         const addOnsList = document.createElement("ul");
         addOnsList.classList.add("add-ons-list");
+        addOnsList.style.pointerEvents = "none"; // modified
         item.addOns.forEach((addOn) => {
           const li = document.createElement("li");
           li.innerHTML = `<div class="item-box">
@@ -196,7 +197,6 @@ const getMenu = fetch("vendor/js/menu.json")
   .then((mainMenu) => {
     const reservMenu = document.querySelector(".reserv .menu");
     showMenu(mainMenu, reservMenu);
-    console.log(mainMenu);
     return mainMenu;
   });
 // ============== cart ==================
@@ -217,6 +217,11 @@ function calculatePrice() {
     price.innerHTML = `$${cart.totalPrice.toFixed(2)}`;
   });
 }
+// function to delete item from cart
+function deleteItem(itemName, arr) {
+  const itemIndex = arr.findIndex((item) => item.name === itemName);
+  arr.splice(itemIndex, 1);
+}
 // function to add or remove items from cart
 function addOrRemoveItemToCart(add, clicked, quantity, type, itemParentName) {
   const menuName = clicked
@@ -229,19 +234,43 @@ function addOrRemoveItemToCart(add, clicked, quantity, type, itemParentName) {
       .find((menu) => menu.name === menuName)
       .items.find((item) => item.name === itemName);
     itemToAdd.quantity = quantity;
+    // adding the element to the cart
     cart.items.push(itemToAdd);
   } else if (add && type === "sub") {
-    const itemToAdd = mainMenu
+    const itemParent = mainMenu
       .find((menu) => menu.name === menuName)
-      .items.find((item) => item.name === itemParentName)
-      .addOns.find((addOn) => addOn.name === itemName);
+      .items.find((item) => item.name === itemParentName);
+    const itemToAdd = itemParent.addOns.find(
+      (addOn) => addOn.name === itemName
+    );
     itemToAdd.quantity = quantity;
+    // adding the subItem name to the parent name so when the parent gets unchecked the sub gets unchecked too
+    itemParent.checkedSubs
+      ? itemParent.checkedSubs.push(itemName)
+      : (itemParent.checkedSubs = [itemName]);
+    // adding the subItem to the cart
     cart.items.push(itemToAdd);
-  } else {
-    const itemIndex = cart.items.findIndex((item) => item.name === itemName);
-    cart.items.splice(itemIndex, 1);
+  } else if (!add && type === "main") {
+    // check if items have checked sub items in the cart then delete them
+    const item = cart.items.find((item) => item.name === itemName);
+    item.checkedSubs &&
+      item.checkedSubs.forEach((subItem) => {
+        console.log(subItem);
+        deleteItem(subItem, cart.items);
+      });
+    item.checkedSubs = [];
+    // deleting the item from the cart
+    deleteItem(itemName, cart.items);
+  } else if (!add && type === "sub") {
+    const itemParent = cart.items.find((item) => item.name === itemParentName);
+    // deleting subitem from the main items checked sub items
+    deleteItem(itemName, itemParent.checkedSubs);
+    // deleting subitem from the cart
+    deleteItem(itemName, cart.items);
   }
-  console.log(cart);
+  // calculating the price from the cart
+  calculatePrice();
+  console.log(cart.items);
 }
 function matchItemBoxes(clicked) {
   let clickedItemBox = [];
@@ -268,10 +297,27 @@ foodMenus.forEach((menu) => {
   menu.addEventListener("click", (e) => {
     const clicked = e.target;
     if (clicked.classList.contains("check-box")) {
-      clicked.classList.toggle("checked");
+      const addOnsList = clicked.closest(".item-box").nextElementSibling;
+      if (clicked.classList.contains("checked")) {
+        clicked.classList.remove("checked");
+        // deselecting every checked sub element
+        if (addOnsList) {
+          const addOnsListItems = addOnsList.children;
+          [...addOnsListItems].forEach((li) => {
+            const checkBox = li.querySelector(".check-box");
+            checkBox.classList.contains("checked") &&
+              checkBox.classList.remove("checked");
+          });
+        }
+        // deactevating the sub list
+        addOnsList ? (addOnsList.style.pointerEvents = "none") : "";
+      } else {
+        clicked.classList.add("checked");
+        addOnsList ? (addOnsList.style.pointerEvents = "all") : "";
+      }
+      // adding/removing the clicked item from cart
       const itemQuantity =
         clicked.parentElement.querySelector(".quantity").value;
-
       const addOrRemove = clicked.classList.contains("checked");
       const type = clicked.closest(".add-ons-list") ? "sub" : "main";
       const itemParentName =
@@ -287,8 +333,7 @@ foodMenus.forEach((menu) => {
         type,
         itemParentName
       );
-      calculatePrice();
-
+      // mathcing checked items from main menu in reservation section with the menus in the category section
       const matchedItemBoxes = matchItemBoxes(clicked);
       if (matchedItemBoxes[0]) {
         if (addOrRemove) {
