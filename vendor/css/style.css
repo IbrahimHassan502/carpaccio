@@ -846,11 +846,18 @@ nav .logo {
   border-radius: 5px;
   width: calc(100% - 30px);
   height: calc(100% - 30px);
+  overflow: auto;
   margin: 15px auto auto 15px;
 }
+
 .special-carousel .item .description-box h3 {
   font-size: 4em;
   color: var(--white-color);
+}
+@media (max-width: 767px) {
+  .special-carousel .item .description-box h3 {
+    font-size: 3em;
+  }
 }
 .special-carousel .item .description-box ul li {
   margin: 40px 10px;
