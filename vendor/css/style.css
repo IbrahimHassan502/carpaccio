@@ -1634,3 +1634,36 @@ div.mapboxgl-ctrl-bottom-right {
     font-size: 1.5em;
   }
 }
+/* footer */
+footer {
+  position: relative;
+  padding: 10px 0;
+  font-size: 0.7em;
+  text-align: center;
+  background-color: var(--grey-color);
+  color: white;
+  font-family: "Merienda", cursive;
+}
+footer .line {
+  width: 70%;
+  height: 2px;
+  border-radius: 100%;
+  background: var(--light-green-color);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer .copyright {
+  margin-bottom: 5px;
+}
+footer .copyright svg {
+  fill: var(--light-green-color);
+  width: 11.5px;
+}
+footer .copyright span {
+  color: var(--light-green-color);
+}
+footer .freepik a {
+  text-decoration: underline;
+}
