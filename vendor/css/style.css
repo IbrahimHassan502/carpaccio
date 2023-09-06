@@ -1148,7 +1148,7 @@ input[type="number"][name="table-num"] {
   margin: 0 0 10px 30px;
 }
 .menu .check-box {
-  align-self: start;
+  /* align-self: start; */
   padding: 12px;
   background: var(--white-color);
   border-radius: 3px;
