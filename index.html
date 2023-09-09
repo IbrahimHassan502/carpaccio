@@ -83,7 +83,13 @@
         hero
     ======================================-->
     <article class="hero bg overlay">
-      <img src="images/dish.svg" alt="dish icon" loading="lazy" />
+      <img
+        src="images/dish.svg"
+        alt="dish icon"
+        loading="lazy"
+        width=""
+        height=""
+      />
       <h1>carpaccio</h1>
       <p class="text-capitalize">- best of the best -</p>
     </article>
@@ -310,17 +316,33 @@
           <h2>make reservation</h2>
           <div class="form-row">
             <div class="input-box">
-              <input type="text" placeholder="name" name="name" required />
+              <label for="name-reservation">user name</label>
+              <input
+                id="name-reservation"
+                type="text"
+                placeholder="name"
+                name="name-reservation"
+                required
+              />
               <i class="icon-user input-icon"></i>
             </div>
             <div class="input-box">
-              <input type="email" placeholder="email" name="email" required />
+              <label for="email">email</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="email"
+                name="email"
+                required
+              />
               <i class="icon-mail input-icon"></i>
             </div>
           </div>
           <div class="form-row">
             <div class="input-box">
+              <label for="phone-reservation">phone number</label>
               <input
+                id="phone-reservation"
                 type="tel"
                 placeholder="phone number"
                 name="phone-num"
@@ -330,7 +352,9 @@
             </div>
             <div class="input-box">
               <span class="date-placeholder">reservation date</span>
+              <label for="reserv-date">reservation date</label>
               <input
+                id="reserv-date"
                 type="date"
                 placeholder="reservation date"
                 name="reserv-date"
@@ -341,7 +365,9 @@
           <div class="form-row">
             <div class="input-box">
               <!-- <span class="time-placeholder">reservation time</span> -->
+              <label for="reserv-time">resrev time</label>
               <input
+                id="reserv-time"
                 type="time"
                 placeholder="reservation time"
                 name="reserv-time"
@@ -349,12 +375,14 @@
               />
             </div>
             <div class="input-box">
+              <label for="guest-num">guest number</label>
               <input
+                id="guest-num"
                 type="number"
                 min="1"
                 max="50"
-                placeholder="number of people"
-                name="people-num"
+                placeholder="guest number"
+                name="guest-num"
                 required
               />
               <i class="icon-users input-icon"></i>
@@ -363,7 +391,9 @@
           <div class="form-row">
             <h3>Having A Big Thing ?</h3>
             <div class="input-box">
+              <label for="table-num">number of tables</label>
               <input
+                id="table-num"
                 type="number"
                 placeholder="tables"
                 name="table-num"
@@ -374,6 +404,8 @@
                 class="input-icon"
                 alt="dinner table icon"
                 loading="lazy"
+                width=""
+                height=""
               />
             </div>
           </div>
@@ -388,19 +420,30 @@
             ></i>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="name" name="name" required />
+            <label for="name-order">user name</label>
+            <input
+              id="name-order"
+              type="text"
+              placeholder="name"
+              name="name-order"
+              required
+            />
             <i class="icon-user input-icon"></i>
           </div>
           <div class="input-box">
+            <label for="phone-order">phone number</label>
             <input
+              id="phone-order"
               type="tel"
               placeholder="phone number"
-              name="phone-num"
+              name="phone-order"
               required
             />
             <i class="icon-phone input-icon"></i>
           </div>
+          <label for="address-order">specific address</label>
           <textarea
+            id="address-order"
             placeholder="specific address"
             name="address"
             required
@@ -502,7 +545,7 @@
           data-name="salad"
         >
           <img
-            src="images/salad.jpg"
+            src="images/salad.webp"
             width="470"
             height="313"
             alt="salad menu"
@@ -670,15 +713,27 @@
                 <img
                   src="images/hand-dish.svg"
                   alt="icon of a hand holding dish"
+                  width=""
+                  height=""
                 />
                 <p>best dish: pasta</p>
               </li>
               <li>
-                <img src="images/cook-exp.svg" alt="icon of a medal" />
+                <img
+                  src="images/cook-exp.svg"
+                  alt="icon of a medal"
+                  width=""
+                  height=""
+                />
                 <p>10+ years of experience</p>
               </li>
               <li>
-                <img src="images/location.svg" alt="icon of a map pin" />
+                <img
+                  src="images/location.svg"
+                  alt="icon of a map pin"
+                  width=""
+                  height=""
+                />
                 <p>home town: chicago</p>
               </li>
             </ul>
@@ -704,15 +759,27 @@
                 <img
                   src="images/hand-dish.svg"
                   alt="icon of a hand holding dish"
+                  width=""
+                  height=""
                 />
                 <p>best dish: pasta</p>
               </li>
               <li>
-                <img src="images/cook-exp.svg" alt="icon of a medal" />
+                <img
+                  src="images/cook-exp.svg"
+                  alt="icon of a medal"
+                  width=""
+                  height=""
+                />
                 <p>10+ years of experience</p>
               </li>
               <li>
-                <img src="images/location.svg" alt="icon of a map pin" />
+                <img
+                  src="images/location.svg"
+                  alt="icon of a map pin"
+                  width=""
+                  height=""
+                />
                 <p>home town: chicago</p>
               </li>
             </ul>
@@ -738,15 +805,27 @@
                 <img
                   src="images/hand-dish.svg"
                   alt="icon of a hand holding dish"
+                  width=""
+                  height=""
                 />
                 <p>best dish: pasta</p>
               </li>
               <li>
-                <img src="images/cook-exp.svg" alt="icon of a medal" />
+                <img
+                  src="images/cook-exp.svg"
+                  alt="icon of a medal"
+                  width=""
+                  height=""
+                />
                 <p>10+ years of experience</p>
               </li>
               <li>
-                <img src="images/location.svg" alt="icon of a map pin" />
+                <img
+                  src="images/location.svg"
+                  alt="icon of a map pin"
+                  width=""
+                  height=""
+                />
                 <p>home town: chicago</p>
               </li>
             </ul>
