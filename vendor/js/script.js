@@ -171,7 +171,9 @@ function showMenu(menuArr, menu) {
                   <div class="check-box"></div>
                   <p class="item-name">${addOn.name}</p>
                   <label for="${addOn.name}">${addOn.name}</label>
-                  <input type="number" class="quantity" value="1" min="1" />
+                  <input id="${
+                    addOn.name
+                  }" type="number" class="quantity" value="1" min="1" />
                   <span class="price">$${addOn.price}</span>
                   ${
                     addOn.describtion
