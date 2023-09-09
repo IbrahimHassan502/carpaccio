@@ -142,7 +142,10 @@ function showMenu(menuArr, menu) {
                 <div class="item-box">
                   <div class="check-box"></div>
                   <p class="item-name">${item.name}</p>
-                  <input type="number" class="quantity" value="1" min="1" />
+                  <label for="${item.name}">${item.name}</label>
+                  <input id="${
+                    item.name
+                  }" type="number" class="quantity" value="1" min="1" />
                   ${
                     item.addOns
                       ? `<div>
@@ -167,6 +170,7 @@ function showMenu(menuArr, menu) {
           li.innerHTML = `<div class="item-box">
                   <div class="check-box"></div>
                   <p class="item-name">${addOn.name}</p>
+                  <label for="${item.name}">${item.name}</label>
                   <input type="number" class="quantity" value="1" min="1" />
                   <span class="price">$${addOn.price}</span>
                   ${

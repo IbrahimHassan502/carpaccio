@@ -1153,6 +1153,7 @@ input[type="number"][name="table-num"] {
   align-items: center;
   grid-template-columns: auto 4fr 1fr 1fr;
   margin-bottom: 30px;
+  position: relative;
 }
 .menu .add-ons-list li {
   margin: 0 0 10px 30px;
@@ -1204,6 +1205,14 @@ input[type="number"][name="table-num"] {
   font-size: 0.8em;
   line-height: 17px;
   margin-top: 10px;
+}
+.menu label {
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 .menu .quantity {
   width: 60px;
